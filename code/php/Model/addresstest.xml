@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GeocodeResponse>
+ <status>OK</status>
+ <result>
+  <type>route</type>
+  <formatted_address>Bothwell Ave, Pittsburgh, PA 15214, USA</formatted_address>
+  <address_component>
+   <long_name>Bothwell Avenue</long_name>
+   <short_name>Bothwell Ave</short_name>
+   <type>route</type>
+  </address_component>
+  <address_component>
+   <long_name>Perry North</long_name>
+   <short_name>Perry North</short_name>
+   <type>neighborhood</type>
+   <type>political</type>
+  </address_component>
+  <address_component>
+   <long_name>Pittsburgh</long_name>
+   <short_name>Pittsburgh</short_name>
+   <type>locality</type>
+   <type>political</type>
+  </address_component>
+  <address_component>
+   <long_name>Allegheny County</long_name>
+   <short_name>Allegheny County</short_name>
+   <type>administrative_area_level_2</type>
+   <type>political</type>
+  </address_component>
+  <address_component>
+   <long_name>Pennsylvania</long_name>
+   <short_name>PA</short_name>
+   <type>administrative_area_level_1</type>
+   <type>political</type>
+  </address_component>
+  <address_component>
+   <long_name>United States</long_name>
+   <short_name>US</short_name>
+   <type>country</type>
+   <type>political</type>
+  </address_component>
+  <address_component>
+   <long_name>15214</long_name>
+   <short_name>15214</short_name>
+   <type>postal_code</type>
+  </address_component>
+  <geometry>
+   <location>
+    <lat>40.4771056</lat>
+    <lng>-80.0106258</lng>
+   </location>
+   <location_type>GEOMETRIC_CENTER</location_type>
+   <viewport>
+    <southwest>
+     <lat>40.4757566</lat>
+     <lng>-80.0119747</lng>
+    </southwest>
+    <northeast>
+     <lat>40.4784545</lat>
+     <lng>-80.0092768</lng>
+    </northeast>
+   </viewport>
+   <bounds>
+    <southwest>
+     <lat>40.4768194</lat>
+     <lng>-80.0106398</lng>
+    </southwest>
+    <northeast>
+     <lat>40.4773917</lat>
+     <lng>-80.0106117</lng>
+    </northeast>
+   </bounds>
+  </geometry>
+  <place_id>ChIJ31M_RHj0NIgRcZ88cPHvUTM</place_id>
+ </result>
+</GeocodeResponse>
