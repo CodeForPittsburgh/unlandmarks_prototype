@@ -3,20 +3,23 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/unlandmark/code/php/Controller/geocoder.php</file>
             <file>file:/C:/xampp/htdocs/unlandmark/code/php/View/PlacesStatus.php</file>
+            <file>file:/C:/xampp/htdocs/unlandmark/code/php/includes/PlacesAddressInformation.php</file>
+            <file>file:/C:/xampp/htdocs/unlandmark/code/php/View/LocationTypeView.html</file>
             <file>file:/C:/xampp/htdocs/unlandmark/code/php/View/index.php</file>
-            <file>file:/C:/xampp/htdocs/unlandmark/code/php/prototypes/GoogleMapTest.html</file>
-            <file>file:/C:/xampp/htdocs/unlandmark/code/php/Controller/DBConnectController.php</file>
-            <file>file:/C:/xampp/htdocs/unlandmark/code/php/Model/bean.config.php</file>
-            <file>file:/C:/xampp/htdocs/unlandmark/code/php/includes/LandmarkType.php</file>
+            <file>file:/C:/xampp/htdocs/unlandmark/code/php/Model/AddressClass.php</file>
+            <file>file:/C:/xampp/htdocs/unlandmark/code/php/includes/CommonHeadings.php</file>
+            <file>file:/C:/xampp/htdocs/unlandmark/code/php/includes/LandmarkTypeOriginal.php</file>
+            <file>file:/C:/xampp/htdocs/unlandmark/code/php/Model/LandmarkTypeModel.php</file>
+            <file>file:/C:/xampp/htdocs/unlandmark/code/php/Controller/DBUpdate.php</file>
+            <file>file:/C:/xampp/htdocs/unlandmark/code/sql/unlandmarkpsql.sql</file>
+            <file>file:/C:/xampp/htdocs/unlandmark/code/php/View/UnlandmarkMaintenanceUtilities.php</file>
             <file>file:/C:/xampp/htdocs/unlandmark/code/php/View/Places.php</file>
             <file>file:/C:/xampp/htdocs/unlandmark/code/php/Model/PlacesClass.php</file>
-            <file>file:/C:/xampp/htdocs/unlandmark/code/php/Model/AddressModel.php</file>
             <file>file:/C:/xampp/htdocs/unlandmark/code/php/Model/PlacesModel.php</file>
+            <file>file:/C:/xampp/htdocs/unlandmark/code/php/View/LocationType.php</file>
             <file>file:/C:/xampp/htdocs/unlandmark/code/php/prototypes/ReadCSVFile.php</file>
-            <file>file:/C:/xampp/htdocs/unlandmark/code/php/Model/GeoCoderClass.php</file>
-            <file>file:/C:/xampp/htdocs/unlandmark/code/php/prototypes/ReverseGeoCode.html</file>
+            <file>file:/C:/xampp/htdocs/unlandmark/code/php/Model/LandmarkTypeClass.php</file>
         </group>
     </open-files>
 </project-private>

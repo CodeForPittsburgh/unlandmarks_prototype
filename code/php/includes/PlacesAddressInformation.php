@@ -9,18 +9,58 @@
 $address = 'address';
 $lat = 'lat';
 $lng = 'lng';
-$my_address = filter_input(INPUT_GET, $address, FILTER_SANITIZE_STRING);
-$my_lat = filter_input(INPUT_GET, $lat, FILTER_SANITIZE_STRING);
-$my_lng = filter_input(INPUT_GET, $lng, FILTER_SANITIZE_STRING);
-//$my_message = "Now is the time for all good men and women to code";
-//print "Address " . $my_address . "<BR>";
-//print "Lat " . $my_lat . "<BR>";
-//print "Lng " . $my_lng . "<BR>";
-//echo "<p id=autocomplete>".$my_address;
-//echo "<p id=latitude>".$my_lat;
-//echo "<p id=longitude>".$my_lng ;
-echo '<input type="text" id="autocomplete" value="'.$my_address.'"><br>';
-//print "Address Again " . $my_address . "<BR>";
-echo '<input type="text" id="latitude" value='.$my_lat.'><br>';
-echo '<input type="text" id="longitude" value='.$my_lng.'><br>';
-//echo '<input type="text" id="longmessage" value="'.$my_message.'"><br>';
+$landmark_name = 'landmark_name';
+$nickname = 'nickname';
+
+$my_address = filter_input(INPUT_GET, $address);
+$my_lat = filter_input(INPUT_GET, $lat);
+$my_lng = filter_input(INPUT_GET, $lng);
+$my_landmark_name = filter_input(INPUT_GET, $landmark_name);
+$my_nickname = filter_input(INPUT_GET, $nickname);
+
+//echo '<p>' . $my_address . '</p>';
+//echo '<p>' . $my_lat . '</p>';
+//echo '<p>' . $my_lng . '</p>';
+//echo '<p>' . $my_landmark_name . '</p>';
+//echo '<p>' . $my_nickname. '</p>';
+
+echo '<input readonly type="text" id="autocomplete" value='.$my_address .'><br>';
+echo '<input readonly type="text" id="latitude" value='.$my_lat .'><br>';
+echo '<input readonly type="text" id="longitude" value='.$my_lng .'><br>';
+echo '<input readonly type="text" id="landmark_name" value='.$my_landmark_name .'><br>';
+echo '<input readonly type="text" id="nickname" value='.$my_nickname .'><br>';
+
+//echo '<p id="autocomplete" value = "$my_address" >' . $my_address;
+//echo '<p id="latitude">' . $my_lat;
+//echo '<p id="longitude">' . $my_lng;
+//echo '<p id="landmark_name">' . $my_landmark_name;
+//echo '<p id="nickname">' . $my_nickname;
+
+
+//echo '<table>';
+//echo '<tr>';
+//echo '<td id="autocomplete>';
+//echo $my_address;
+//echo '</td>';
+//echo '</tr>';
+//echo '<tr>';
+//echo '<td id="latitude>';
+//echo $my_lat;
+//echo '</td>';
+//echo '</tr>';
+//echo '<tr>';
+//echo '<td id="longitude>';
+//echo $my_lng;
+//echo '</td>';
+//echo '</tr>';
+//echo '<tr>';
+//echo '<td id="landmark_name>';
+//echo $my_landmark_name;
+//echo '</td>';
+//echo '</tr>';
+//echo '<tr>';
+//echo '<td id="nickname>';
+//echo $my_nickname;
+//echo '</td>';
+//echo '</tr>';
+//echo '</table>';

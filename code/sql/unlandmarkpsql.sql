@@ -54,21 +54,16 @@ $verify_users_stamp$ LANGUAGE plpgsql;
 -----------------------------
 DROP TABLE IF EXISTS unlandmark.places;
 CREATE TABLE unlandmark.places(
-places_id serial NOT NULL,
+        places_id serial NOT NULL,
         landmark_name varchar(128),
-        one_line text,
         nickname varchar(128),
-        places_type_id integer,
         address_id integer,
-        landmark_status_id integer,
-        current_use text,
-        landmark_url_type_id integer,
-        start_date varchar(20),
-        start_date_confidence varchar(6),
+        original_use_type_id integer,
+        original_use text,
         end_date varchar(20),
-        end_date_confidence varchar(6),
-        historic_address_id integer,
-        history_summary text,
+        current_use_type_id integer,
+        current_use text,
+        stories__id integer,
         verification_indicator boolean default FALSE,
         created_by varchar(20),
         created_time timestamp not null,
@@ -76,9 +71,9 @@ places_id serial NOT NULL,
         updated_time timestamp,
         verified_by varchar(20),
         verified_time timestamp,
-  CONSTRAINT places_pkey PRIMARY KEY (places_id),
-FOREIGN KEY (address_id) REFERENCES address(address_id),
-FOREIGN KEY (places_type_id) REFERENCES landmark_type(places_type_id)
+  CONSTRAINT places_pkey PRIMARY KEY (places_id)
+-- FOREIGN KEY (address_id) REFERENCES address(address_id),
+-- FOREIGN KEY (places_type_id) REFERENCES landmark_type(places_type_id)
 )
 WITH (
   OIDS=FALSE

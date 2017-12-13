@@ -14,212 +14,181 @@ include_once("bean.config.php");
  */
 class PlacesClass {
 
-    private $places_id;
-    private $landmark_name;
-    private $one_line;
-    private $nickname;
-    private $places_type_id;
-    private $address_id;
-    private $landmark_status_id;
-    private $current_use;
-    private $landmark_url_type_id;
-    private $start_date;
-    private $start_date_confidence;
-    private $end_date;
-    private $end_date_confidence;
-    private $historic_address_id;
-    private $history_summary;
-    private $verification_indicator;
-    private $updated_by;
-    private $updated_time;
+        private $places_id; // serial NOT NULL,
+        private $landmark_name; // varchar(128),
+        private $nickname; // varchar(128),
+        private $address_id; // integer,
+        private $original_use_type_id; // integer,
+        private $original_use; // text,
+        private $end_date; // varchar(20),
+        private $current_use_type_id; // integer,
+        private $current_use; // text,
+        private $stories__id; // integer,
+        private $verification_indicator; // boolean default FALSE,
+        private $created_by; // varchar(20),
+        private $created_time; // timestamp not null,
+        private $updated_by; // varchar(20),
+        private $updated_time; // timestamp,
+        private $verified_by; // varchar(20),
+        private $verified_time; // timestamp,
+        function getPlaces_id() {
+            return $this->places_id;
+        }
 
+        function getLandmark_name() {
+            return $this->landmark_name;
+        }
 
-    function getPlaces_id() {
-        return $this->places_id;
-    }
+        function getNickname() {
+            return $this->nickname;
+        }
 
-    function getLandmark_name() {
-        return addSingleQuote($this->landmark_name);
+        function getAddress_id() {
+            return $this->address_id;
+        }
 
-    }
+        function getOriginal_use_type_id() {
+            return $this->original_use_type_id;
+        }
 
-    function getOne_line() {
-        return addSingleQuote($this->one_line);
-    }
+        function getOriginal_use() {
+            return $this->original_use;
+        }
 
-    function getNickname() {
-        return addSingleQuote($this->nickname);
-    }
+        function getEnd_date() {
+            return $this->end_date;
+        }
 
-    function getPlaces_type_id() {
-        return $this->places_type_id;
-    }
+        function getCurrent_use_type_id() {
+            return $this->current_use_type_id;
+        }
 
-    function getAddress_id() {
-        return $this->address_id;
-    }
+        function getCurrent_use() {
+            return $this->current_use;
+        }
 
-    function getLandmark_status_id() {
-        return $this->landmark_status_id;
-    }
+        function getStories__id() {
+            return $this->stories__id;
+        }
 
-    function getCurrent_use() {
-        return addSingleQuote($this->current_use);
-    }
+        function getVerification_indicator() {
+            return $this->verification_indicator;
+        }
 
-    function getLandmark_url_type_id() {
-        return $this->landmark_url_type_id;
-    }
+        function getCreated_by() {
+            return $this->created_by;
+        }
 
-    function getStart_date() {
-        return addSingleQuote($this->start_date);
-    }
+        function getCreated_time() {
+            return $this->created_time;
+        }
 
-    function getStart_date_confidence() {
-        return $this->start_date_confidence;
-    }
+        function getUpdated_by() {
+            return $this->updated_by;
+        }
 
-    function getEnd_date() {
-        return addSingleQuote($this->end_date);
-    }
+        function getUpdated_time() {
+            return $this->updated_time;
+        }
 
-    function getEnd_date_confidence() {
-        return $this->end_date_confidence;
-    }
+        function getVerified_by() {
+            return $this->verified_by;
+        }
 
-    function getHistoric_address_id() {
-        return $this->historic_address_id;
-    }
+        function getVerified_time() {
+            return $this->verified_time;
+        }
 
-    function getHistory_summary() {
-        return addSingleQuote($this->history_summary);
-    }
+        function setPlaces_id($places_id) {
+            $this->places_id = $places_id;
+        }
 
-    function getVerification_indicator() {
-        return $this->verification_indicator;
-    }
+        function setLandmark_name($landmark_name) {
+            $this->landmark_name = addSingleQuote(pg_escape_string($landmark_name));
+        }
 
-    function getUpdated_by() {
-        return $this->updated_by;
-    }
+        function setNickname($nickname) {
+            $this->nickname = addSingleQuote(pg_escape_string($nickname));
+        }
 
-    function getUpdated_time() {
-        return $this->updated_time;
-    }
+        function setAddress_id($address_id) {
+            $this->address_id = $address_id;
+        }
 
-    function setPlaces_id($places_id) {
-        $this->places_id = $places_id;
-    }
+        function setOriginal_use_type_id($original_use_type_id) {
+            $this->original_use_type_id = $original_use_type_id;
+        }
 
-    function setLandmark_name($landmark_name) {
-        $this->landmark_name = $landmark_name;
-    }
+        function setOriginal_use($original_use) {
+            $this->original_use = addSingleQuote(pg_escape_string($original_use));
+        }
 
-    function setOne_line($one_line) {
-        $this->one_line = $one_line;
-    }
+        function setEnd_date($end_date) {
+            $this->end_date = addSingleQuote($end_date);
+        }
 
-    function setNickname($nickname) {
-        $this->nickname = $nickname;
-    }
+        function setCurrent_use_type_id($current_use_type_id) {
+            $this->current_use_type_id = $current_use_type_id;
+        }
 
-    function setPlaces_type_id($places_type_id) {
-        $this->places_type_id = $places_type_id;
-    }
+        function setCurrent_use($current_use) {
+            $this->current_use = addSingleQuote(pg_escape_string($current_use));
+        }
 
-    function setAddress_id($address_id) {
-        $this->address_id = $address_id;
-    }
+        function setStories__id($stories__id) {
+            $this->stories__id = $stories__id;
+        }
 
-    function setLandmark_status_id($landmark_status_id) {
-        $this->landmark_status_id = $landmark_status_id;
-    }
+        function setVerification_indicator($verification_indicator) {
+            $this->verification_indicator = $verification_indicator;
+        }
 
-    function setCurrent_use($current_use) {
-        $this->current_use = $current_use;
-    }
+        function setCreated_by($created_by) {
+            $this->created_by = $created_by;
+        }
 
-    function setLandmark_url_type_id($landmark_url_type_id) {
-        $this->landmark_url_type_id = $landmark_url_type_id;
-    }
+        function setCreated_time($created_time) {
+            $this->created_time = $created_time;
+        }
 
-    function setStart_date($start_date) {
-        $this->start_date = $start_date;
-    }
+        function setUpdated_by($updated_by) {
+            $this->updated_by = $updated_by;
+        }
 
-    function setStart_date_confidence($start_date_confidence) {
-        $this->start_date_confidence = $start_date_confidence;
-    }
+        function setUpdated_time($updated_time) {
+            $this->updated_time = $updated_time;
+        }
 
-    function setEnd_date($end_date) {
-        $this->end_date = $end_date;
-    }
+        function setVerified_by($verified_by) {
+            $this->verified_by = $verified_by;
+        }
 
-    function setEnd_date_confidence($end_date_confidence) {
-        $this->end_date_confidence = $end_date_confidence;
-    }
+        function setVerified_time($verified_time) {
+            $this->verified_time = $verified_time;
+        }
 
-    function setHistoric_address_id($historic_address_id) {
-        $this->historic_address_id = $historic_address_id;
-    }
-
-    function setHistory_summary($history_summary) {
-        $this->history_summary = $history_summary;
-    }
-
-    function setVerification_indicator($verification_indicator) {
-        $this->verification_indicator = $verification_indicator;
-    }
-
-    function setUpdated_by($updated_by) {
-        $this->updated_by = $updated_by;
-    }
-
-    function setUpdated_time($updated_time) {
-        $this->updated_time = $updated_time;
-    }
-
-//    public function delete($places_id)
-//    {
-//        $sql = "DELETE FROM places WHERE places_id={$places_id}";
-//        $this->resetLastSqlError();
-//        $result = $this->query($sql);
-//        $this->lastSql = $sql;
-//        if (!$result) {
-//            $this->lastSqlError = $this->sqlstate . " - ". $this->error;
-//        }
-//        return $this->affected_rows;
-//    }
-
-
-    public function insert() {
+        
+            public function insert() {
 //        if ($this->isPkAutoIncrement) {
 //            $this->deptNo = "";
 //        }
         // $constants = get_defined_constants();
         $sql = <<< SQL
             INSERT INTO unlandmark.places
-            (landmark_name, one_line, nickname, places_type_id, 
-            address_id, landmark_status_id, current_use, landmark_url_type_id, 
-            start_date, start_date_confidence, end_date, end_date_confidence, 
-            historic_address_id, history_summary, verification_indicator)
+            (landmark_name, nickname, address_id, original_use_type_id, 
+            original_use, end_date, current_use_type_id, current_use, stories__id, 
+            verification_indicator)
                 
-            VALUES({$this->getlandmark_name()}, 
-            {$this->getone_line()}, 
-            {$this->getnickname()},
-            {$this->getplaces_type_id()},
-            {$this->getaddress_id()},
-            {$this->getlandmark_status_id()}, 
-            {$this->getcurrent_use()},
-            {$this->getlandmark_url_type_id()}, 
-            {$this->getstart_date()},
-            {$this->getstart_date_confidence()},
-            {$this->getend_date()},
-            {$this->getend_date_confidence()}, 
-            {$this->gethistoric_address_id()},
-            {$this->gethistory_summary()}, 
-            {$this->getverification_indicator()}
-            
+            VALUES({$this->getLandmark_name()},
+            {$this->getNickname()},
+            {$this->getAddress_id()},
+            {$this->getOriginal_use_type_id()},
+            {$this->getOriginal_use()}, 
+            {$this->getEnd_date()},
+            {$this->getCurrent_use_type_id()},
+            {$this->getCurrent_use()},
+            {$this->getStories__id()},
+            {$this->getVerification_indicator()}
             )
 SQL;
         //$this->resetLastSqlError();
@@ -227,50 +196,9 @@ SQL;
         //$result = "RESULT";
 
         $result = pg_query(DBCONN,$sql);
-//        $this->lastSql = $sql;
-//        if (!$result) {
-//            $this->lastSqlError = $this->sqlstate . " - ". $this->error;
-//        } else {
-//            $this->allowUpdate = true;
-//            if ($this->isPkAutoIncrement) {
-//                $this->deptNo = $this->insert_id;
-//            }
-//        }
+
         return $result;
     }
 
-    /**
-     * Updates a specific row from the table departments with the values of the current object.
-     *
-     * All class attribute values defined for mapping all table fields are automatically used during updating of selected row.<br>
-     * Null values are used for all attributes not previously setted.
-     * @param string $deptNo the primary key dept_no value of table departments which identifies the row to update.
-     * @return mixed MySQL update result
-     * @category DML
-     */
-//    public function update($deptNo)
-//    {
-//        // $constants = get_defined_constants();
-//        if ($this->allowUpdate) {
-//            $sql = <<< SQL
-//            UPDATE
-//                departments
-//            SET 
-//				dept_name={$this->parseValue($this->deptName,'notNumber')}
-//            WHERE
-//                dept_no={$this->parseValue($deptNo,'string')}
-//SQL;
-//            $this->resetLastSqlError();
-//            $result = $this->query($sql);
-//            if (!$result) {
-//                $this->lastSqlError = $this->sqlstate . " - ". $this->error;
-//            } else {
-//                $this->select($deptNo);
-//                $this->lastSql = $sql;
-//                return $result;
-//            }
-//        } else {
-//            return false;
-//        }
-//    }
+    
 }

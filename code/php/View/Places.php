@@ -148,6 +148,16 @@ and open the template in the editor.
                         <td class="wideField" colspan="3"><input class="field"
                                                                  id="longitude" disabled></td>
                     </tr>
+                                        <tr>
+                        <td class="label">Landmark Name</td>
+                        <td class="wideField" colspan="3"><input class="field"
+                                                                 id="landmark_name" ></td>
+                    </tr>
+                                        <tr>
+                        <td class="label">Nickname</td>
+                        <td class="wideField" colspan="3"><input class="field"
+                                                                 id="nickname" ></td>
+                    </tr>
                 </table>
 
             </div>
@@ -156,7 +166,7 @@ and open the template in the editor.
 
             <div class="col-sm-6" style="background-color:whitesmoke">
                 <div id="map">
-                    <p>This will be the map!</p>
+                    <p style="text-align: center">The map will display here!</p>
                 </div>
 
             </div>
@@ -184,7 +194,9 @@ and open the template in the editor.
             country: 'long_name',
             postal_code: 'short_name',
             latitude: 'long_name',
-            longitude: 'long_name'
+            longitude: 'long_name',
+            landmark_name: 'long_name',
+            nickname: 'long_name'
         };
 
         function initAutocomplete() {
@@ -297,13 +309,14 @@ and open the template in the editor.
 //            var address = document.getElementById('autocomplete').value;
 //            var lat = document.getElementById('latitude').value;
 //            var lng = document.getElementById('longitude').value;
-
+            var landmark_name = document.getElementById('landmark_name').value;
+            var nickname =  document.getElementById('nickname').value;
             var address = document.getElementById('autocomplete').value;
             var lat = document.getElementById('latitude').value;
             var lng = document.getElementById('longitude').value;
             //alert(address + ",\n " + lat + ", " + lng);
-            var url = "./PlacesStatus.php?address=" + address + "&lat=" + lat + "&lng=" + lng;
-            //alert(url);
+            var url = "./PlacesStatus.php?landmark_name='"+landmark_name + "'&nickname='"+nickname + "'&address='" + address + "'&lat=" + lat + "&lng=" + lng;
+            alert(url);
             window.location.assign(url);
         }
 

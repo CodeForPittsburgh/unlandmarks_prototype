@@ -11,6 +11,7 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a href="./">Home</a></li>
+                        <li><a href="UnlandmarkMaintenanceUtilities.php">Utilities</a></li>
                         <li><a href="About.php">About</a></li>
                         <li><a href="Contacts.php">Contact</a></li>
                     </ul>

@@ -109,7 +109,7 @@ with the status information to be saved in the address table and the places tabl
         <p>&nbsp;</p>
 
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-4" style="background-color:whitesmoke">
 
                 <!-- calendar css needed -->
                 <?php
@@ -157,6 +157,8 @@ with the status information to be saved in the address table and the places tabl
         var current_description;
         var enddate;
         var obj;
+        var landmark_name;
+        var nickname;
 
         function enableButton()
         {
@@ -170,9 +172,12 @@ with the status information to be saved in the address table and the places tabl
             original_description = document.getElementById('original_description').value;
             current_description = document.getElementById('current_description').value;
             enddate = document.getElementById('datepicker').value;
-            var message = address + ",\n " + lat + ", " + lng + ",\n" + former_landmark_type + ",\n " + original_description + ",\n" + enddate + ",\n" + current_landmark_type + ",\n " + current_description;
+            landmark_name = document.getElementById('landmark_name').value;
+            nickname = document.getElementById('nickname').value;
+            
+            var message = landmark_name + ",\n"+ nickname + ",\n"+ address + ",\n " + lat + ", " + lng + ",\n" + former_landmark_type + ",\n " + original_description + ",\n" + enddate + ",\n" + current_landmark_type + ",\n " + current_description;
             displayAlert(message);
-            obj = {"address": address, "lat": lat, "lng": lng, "former_landmark_type": former_landmark_type, "original_description": original_description, "enddate": enddate, "current_landmark_type": current_landmark_type, "current_description": current_description};
+            obj = {"landmark_name":landmark_name,"nickname":nickname,"address": address, "lat": lat, "lng": lng, "former_landmark_type": former_landmark_type, "original_description": original_description, "enddate": enddate, "current_landmark_type": current_landmark_type, "current_description": current_description};
             document.getElementById("Save").disabled = false;
         }
         function msgme() {

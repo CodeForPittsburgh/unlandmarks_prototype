@@ -114,8 +114,26 @@ SQL;
 //                $this->deptNo = $this->insert_id;
 //            }
 //        }
+        $this->select_address_id();
         return $result;
     }
 
+    public function select_address_id() {
+        $sql = <<< SQL
+            select address_id from unlandmark.address
+
+             where current_address = {$this->getcurrent_address()}
+           and lat = '{$this->getlat()}'
+           and lng = '{$this->getlng()}'
+
+SQL;
+        //$this->resetLastSqlError();
+        print "SQL " . $sql . "<BR>";
+        //$result = "RESULT";
+
+        $results = pg_query(DBCONN, $sql);
+        $row = pg_fetch_row($results);
+        $this->setAddress_id($row[0]);
+    }
 
 }
