@@ -52,8 +52,8 @@ and open the template in the editor.
         <div class="container body-content">
             
 
-    <div class="jumbotron" style="text-align:center">
-        <h1>Welcome to Unlandmark</h1>
+    <div class="jumbotron" style="text-align:center; background-image:url(../../images/unlandmarks.jpg);background-size: 300px 350px;background-repeat: no-repeat;">
+        <h1>Welcomes you</h1>
         <p class="lead">Code for Pittsburgh</p>
         <p><a href="About.php" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
     </div>
@@ -75,7 +75,7 @@ and open the template in the editor.
                 You can add narratives, web links and personal accounts
             </p>
             <p>
-                <a class="btn btn-default" href="Stories.php">Stories &raquo;</a>
+                <a class="btn btn-default disabled" href="Stories.php">Stories &raquo;</a>
             </p>
         </div>
         <div class="col-md-4">
@@ -84,7 +84,7 @@ and open the template in the editor.
                 Lets see what it looks like on the map.
             </p>
             <p>
-                <a class="btn btn-default" href="Map.php">Map it &raquo;</a>
+                <a class="btn btn-default disabled" href="Map.php">Map it &raquo;</a>
             </p>
         </div>
     </div>

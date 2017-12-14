@@ -19,6 +19,8 @@ with the status information to be saved in the address table and the places tabl
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="../../js/bootstrap.js" type="text/javascript"></script>
         <script src="../../js/respond.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
 
         <link href="../../css/bootstrap.css" rel="stylesheet"/>
         <link href="../../css/Site.css" rel="stylesheet"/>
@@ -71,6 +73,7 @@ with the status information to be saved in the address table and the places tabl
                 height: 20px;
                 margin-bottom: 2px;
             }
+
         </style>
     </head>
     <?php include "../includes/CommonHeadings.php"; ?>
@@ -101,15 +104,15 @@ with the status information to be saved in the address table and the places tabl
         </div>
     </div>
     -->
-    <div class="container">
+    <div class="container" >
 
         <h2>Places</h2>
         <h3>UNLANDMARK Place Status Entry Page.</h3>
         <p>&nbsp;</p>
         <p>&nbsp;</p>
 
-        <div class="row">
-            <div class="col-sm-4" style="background-color:whitesmoke">
+        <div class="row" >
+            <div class="col-sm-4" style="background-color:whitesmoke; height: 500px">
 
                 <!-- calendar css needed -->
                 <?php

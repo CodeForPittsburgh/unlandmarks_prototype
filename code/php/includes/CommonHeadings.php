@@ -14,6 +14,7 @@
                         <li><a href="UnlandmarkMaintenanceUtilities.php">Utilities</a></li>
                         <li><a href="About.php">About</a></li>
                         <li><a href="Contacts.php">Contact</a></li>
+                        <li><a href="Version.php">Version 0.1.10</a></li>
                     </ul>
                     
                             <ul class="nav navbar-nav navbar-right">

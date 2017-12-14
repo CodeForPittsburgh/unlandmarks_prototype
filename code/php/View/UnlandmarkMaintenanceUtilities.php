@@ -26,8 +26,8 @@ and open the template in the editor.
         <div class="container body-content">
 
 
-            <div class="jumbotron" style="text-align: center">
-                <h1>Welcome to Unlandmark</h1>
+            <div class="jumbotron" style="text-align:center; background-image:url(../../images/unlandmarks.jpg);background-size: 300px 350px;background-repeat: no-repeat;">
+                <h1>Welcomes you</h1>
                 <p> Utilities </p>
             </div>
 
