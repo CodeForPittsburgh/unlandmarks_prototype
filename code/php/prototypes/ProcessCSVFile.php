@@ -15,8 +15,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+include '../Model/LandmarkTypeClass.php';
+include '../Model/AddressClass.php';
+include '../Model/PlacesClass.php';
 
-
+global $landmarktype;
+$landmarktype = new LandmarkTypeClass();
+global $landmarkaddress;
+$landmarkaddress = new AddressClass();
+global $landmarkplace;
+$landmarkplace = new PlacesClass();
 $filename = "../../Data/Unlandmarks Master Spreadsheet.csv";
 //C:\wamp\www\unlandmark\Unlandmarks Master Spreadsheet.csv
 parseFile($filename);
@@ -37,19 +45,21 @@ function display($pieces) {
     //print "Count " . $count . "<BR>";
     // print_r($pieces);
     //print "<BR>";
-    buildLandmarkType($pieces);
-    buildAddressInsert($pieces);
-    buildPlacesInsert($pieces);
+    buildPlacesType($pieces);
+    //buildAddressInsert($pieces);
+    //buildPlacesInsert($pieces);
 }
 
-function buildLandmarkType($pieces) {
-
-    $type = $pieces[3];
-    //$sql = "insert into \"PoliceBlotter2\".description(section,description) (select '" . $section . "' as section,'" . $description . "' as description where not exists (select section from \"PoliceBlotter2\".description where section='" . $section . "'));\n";
-    $sql = "INSERT INTO unlandmark.landmark_type(
-           landmark_type_description)
-    VALUES ('$type');";
-    print $sql . "<BR>";
+function buildPlacesType($pieces) {
+        global $landmarktype;
+    $landmarktype->setLandmark_type_description($pieces[3]);
+    $landmarktype->insert();
+//    $type = $pieces[3];
+//    //$sql = "insert into \"PoliceBlotter2\".description(section,description) (select '" . $section . "' as section,'" . $description . "' as description where not exists (select section from \"PoliceBlotter2\".description where section='" . $section . "'));\n";
+//    $sql = "INSERT INTO unlandmark.landmark_type(
+//           landmark_type_description)
+//    VALUES ('$type');";
+//    print $sql . "<BR>";
 }
 
 function buildAddressInsert($pieces) {

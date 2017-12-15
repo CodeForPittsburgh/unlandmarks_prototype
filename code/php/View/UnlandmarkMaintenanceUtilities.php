@@ -39,7 +39,7 @@ and open the template in the editor.
                     </p>
 
                     <p>
-                        <a class="btn btn-default" href="Maintenance.php">Data Maintenance &raquo;</a>
+                        <a class="btn btn-default disabled" href="Maintenance.php">Data Maintenance &raquo;</a>
                     </p>
                 </div>
                 <div class="col-md-4">
@@ -49,7 +49,7 @@ and open the template in the editor.
                     </p>
 
                     <p>
-                        <a class="btn btn-default" href="LocationType.php">Location Maintenance &raquo;</a>
+                        <a class="btn btn-default" href="LocationTypeView.php">Location Maintenance &raquo;</a>
                     </p>
                 </div>
                 <div class="col-md-4">
@@ -59,16 +59,14 @@ and open the template in the editor.
                     </p>
 
                     <p>
-                        <a class="btn btn-default" href="Verification.php">Verification &raquo;</a>
+                        <a class="btn btn-default disabled" href="Verification.php">Verification &raquo;</a>
                     </p>
                 </div>
             </div>
 
 
             <hr />
-            <footer>
-                <p>&copy; 2017 - Code for Pittsburgh</p>
-            </footer>
+            <?php include "../includes/footer.php"; ?>
         </div>
 
     </body>

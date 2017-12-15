@@ -6,11 +6,16 @@
  * and open the template in the editor.
  */
 
+//include '../Model/LandmarkTypeClass.php';
 
-$SQL = "SELECT * FROM unlandmark.landmark_type order by landmark_type_description";
+
+//global $landmarktype;
+$landmarktype2 = new LandmarkTypeClass();
+$result2 = $landmarktype2->select_landmark_type_description();
+//$SQL = "SELECT * FROM unlandmark.landmark_type order by landmark_type_description";
 
 echo "<select id='current_landmark_type'>";
-$result2 = query_pg($conn, $SQL);
+//$result2 = query_pg($conn, $SQL);
 while ($row = pg_fetch_row($result2)) {
 
     $id = $row[0];

@@ -27,7 +27,7 @@ and open the template in the editor.
 
             <div class="jumbotron" style="text-align:center; background-image:url(../../images/unlandmarks.jpg);background-size: 300px 350px;background-repeat: no-repeat;">
                 <h1>Welcomes you</h1>
-                <p> Utilities </p>
+                <p> Location Utilities </p>
             </div>
 
             <div class="row">
@@ -42,7 +42,7 @@ and open the template in the editor.
                 </div>
             </div>
             <hr />
-<?php include "../includes/footer.php"; ?>
+            <?php include "../includes/footer.php"; ?>
         </div>
         <script>
 
@@ -60,4 +60,3 @@ and open the template in the editor.
     </body>
 
 </html>
-

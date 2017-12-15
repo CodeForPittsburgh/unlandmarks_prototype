@@ -198,7 +198,7 @@ WITH (
 DROP TABLE IF EXISTS unlandmark.landmark_type;
 CREATE TABLE unlandmark.landmark_type (
         landmark_type_id serial NOT NULL,
-        landmark_type_description  varchar(20) NOT NULL,
+        landmark_type_description  varchar(30) NOT NULL,
         verification_indicator boolean default FALSE,
         created_by varchar(20),
         created_time timestamp not null,

@@ -7,9 +7,16 @@
  */
 
 include '../Controller/DBConnectController.php';
-$conn = pg_main();
-$SQL = "SELECT * FROM unlandmark.landmark_type order by landmark_type_description";
-$result = query_pg($conn, $SQL);
+include '../Model/LandmarkTypeClass.php';
+
+
+global $landmarktype;
+$landmarktype = new LandmarkTypeClass();
+$result = $landmarktype->select_landmark_type_description();
+
+//$conn = pg_main();
+//$SQL = "SELECT * FROM unlandmark.landmark_type order by landmark_type_description";
+//$result = query_pg($conn, $SQL);
 
 
 echo "<select id='former_landmark_type'>";
