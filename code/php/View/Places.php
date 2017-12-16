@@ -67,34 +67,8 @@ and open the template in the editor.
             }
         </style>
     </head>
-<?php include "../includes/CommonHeadings.php"; ?>
-    <!--
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="./" class="navbar-brand">UNLANDMARK</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="./">Home</a></li>
-                    <li><a href="About.php">About</a></li>
-                    <li><a href="Contacts.php">Contact</a></li>
-                </ul>
+    <?php include "../includes/CommonHeadings.php"; ?>
 
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="Register.php">Register</a></li>
-                    <li><a href="Login.php">Log in</a></li>
-                </ul>
-
-            </div>
-        </div>
-    </div>
-    -->
     <div class="container">
 
         <h2>Places</h2>
@@ -148,12 +122,12 @@ and open the template in the editor.
                         <td class="wideField" colspan="3"><input class="field"
                                                                  id="longitude" disabled></td>
                     </tr>
-                                        <tr>
+                    <tr>
                         <td class="label">Landmark Name</td>
                         <td class="wideField" colspan="3"><input class="field"
-                                                                 id="landmark_name" ></td>
+                                                                 id="landmark_name" required ></td>
                     </tr>
-                                        <tr>
+                    <tr>
                         <td class="label">Nickname</td>
                         <td class="wideField" colspan="3"><input class="field"
                                                                  id="nickname" ></td>
@@ -170,7 +144,7 @@ and open the template in the editor.
                 </div>
 
             </div>
-            <button id="Next" onClick="msgme()" type="button" disabled >Next &raquo;</button>
+            <button id="Next" onClick="validateForm()" type="button" disabled >Next &raquo;</button>
 
         </div>
 
@@ -310,16 +284,25 @@ and open the template in the editor.
 //            var lat = document.getElementById('latitude').value;
 //            var lng = document.getElementById('longitude').value;
             var landmark_name = document.getElementById('landmark_name').value;
-            var nickname =  document.getElementById('nickname').value;
+            var nickname = document.getElementById('nickname').value;
             var address = document.getElementById('autocomplete').value;
             var lat = document.getElementById('latitude').value;
             var lng = document.getElementById('longitude').value;
             //alert(address + ",\n " + lat + ", " + lng);
-            var url = "./PlacesStatus.php?landmark_name='"+landmark_name + "'&nickname='"+nickname + "'&address='" + address + "'&lat=" + lat + "&lng=" + lng;
+            var url = "./PlacesStatus.php?landmark_name=\"" + landmark_name + "\"&nickname=\"" + nickname + "\"&address='" + address + "'&lat=" + lat + "&lng=" + lng;
             alert(url);
             window.location.assign(url);
         }
-
+        function validateForm() {
+            var x = document.getElementById('landmark_name').value;
+            if (x === "") {
+                alert("Landmark Name must be filled out");
+                return false;
+            } else
+            {
+                msgme();
+            }
+        }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCb3EA0lfao273s6Jkp8tfTzJfUSkswpOw&libraries=places&callback=initAutocomplete"
     async defer></script>
