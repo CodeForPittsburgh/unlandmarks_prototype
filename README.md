@@ -6,6 +6,7 @@ This is a work in progress
 ## First phase
 * To get addresses and place information linked together
 * Error Handling
+* Logging
 
 ## Second phase
 * To get details about the unlandmark
@@ -33,6 +34,7 @@ This is a work in progress
 * Setup up webserver
 * Setup database
 * Publish
+* Webserver activity tracker
 
 ## Seventh phase
 * User testing
