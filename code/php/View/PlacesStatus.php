@@ -19,8 +19,8 @@ with the status information to be saved in the address table and the places tabl
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="../../js/bootstrap.js" type="text/javascript"></script>
         <script src="../../js/respond.js" type="text/javascript"></script>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
 
         <link href="../../css/bootstrap.css" rel="stylesheet"/>
         <link href="../../css/Site.css" rel="stylesheet"/>
@@ -98,24 +98,12 @@ with the status information to be saved in the address table and the places tabl
                 ?>
 
             </div>
-            <div class="col-sm-4">
+            
+            <?php
+            include '../includes/LandmarkTypeLoader.php';
+            ?>
 
-                <p>Unlandmark location type - pull down</p>
-                <?php
-                include '../includes/LandmarkTypeOriginal.php';
-                ?>
 
-            </div>
-            <div class="col-sm-4">
-                <p>Unlandmark current location type - pull down</p>
-                <?php
-                include '../includes/LandmarkTypeCurrent.php';
-                ?>
-                <p>Need code to handle when ready to save</p>
-                <button id="Enable" type="button" onclick="enableButton()">Enable &raquo;</button>
-
-                <button id="Save" type="button" disabled onclick="msgme()">Save &raquo;</button>
-            </div>
             <div id="demo"></div>
         </div>
 
@@ -139,23 +127,39 @@ with the status information to be saved in the address table and the places tabl
 
         function enableButton()
         {
+            //alert("ENABLE BUTTON");
             address = document.getElementById('autocomplete').value;
+            //alert(address);
             lat = document.getElementById('latitude').value;
+            //alert(lat);
             lng = document.getElementById('longitude').value;
+            //alert(lng);
             var ef = document.getElementById('former_landmark_type');
             former_landmark_type = ef.options[ef.selectedIndex].text;
+            //alert(former_landmark_type);
             var ec = document.getElementById('current_landmark_type');
             current_landmark_type = ec.options[ec.selectedIndex].text;
+            //alert(current_landmark_type);
             original_description = document.getElementById('original_description').value;
+            //alert(original_description);
             current_description = document.getElementById('current_description').value;
+            //alert(current_description);
             enddate = document.getElementById('datepicker').value;
+            //alert(enddate);
             landmark_name = document.getElementById('landmark_name').value;
+            //alert(landmark_name);
             nickname = document.getElementById('nickname').value;
-            
-            var message = landmark_name + ",\n"+ nickname + ",\n"+ address + ",\n " + lat + ", " + lng + ",\n" + former_landmark_type + ",\n " + original_description + ",\n" + enddate + ",\n" + current_landmark_type + ",\n " + current_description;
+           // alert(nickname);
+
+            var message = landmark_name + ",\n" + nickname + ",\n" + address + ",\n " + lat + ", " + lng + ",\n" + former_landmark_type + ",\n " + original_description + ",\n" + enddate + ",\n" + current_landmark_type + ",\n " + current_description;
             displayAlert(message);
-            obj = {"landmark_name":landmark_name,"nickname":nickname,"address": address, "lat": lat, "lng": lng, "former_landmark_type": former_landmark_type, "original_description": original_description, "enddate": enddate, "current_landmark_type": current_landmark_type, "current_description": current_description};
+            obj = {"landmark_name": landmark_name, "nickname": nickname, "address": address, "lat": lat, "lng": lng, "former_landmark_type": former_landmark_type, "original_description": original_description, "enddate": enddate, "current_landmark_type": current_landmark_type, "current_description": current_description};
             document.getElementById("Save").disabled = false;
+        }
+        
+        function enableButton0()
+        {
+            alert("BUTTON0");
         }
         function msgme() {
 
