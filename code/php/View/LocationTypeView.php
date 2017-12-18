@@ -31,7 +31,7 @@ and open the template in the editor.
             </div>
 
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-sm-4">
                     <form>
                         <input type="text" id="landmark_type" size="35">
                         <!-- <input type="submit" class="button" name="insert" value="insert" /> -->
@@ -40,20 +40,56 @@ and open the template in the editor.
 
                     </form>
                 </div>
+                <div class="col-sm-4">
+                    <?php include "../Controller/unlandmark_type_list.php"; ?>
+                </div>
             </div>
             <hr />
             <?php include "../includes/footer.php"; ?>
         </div>
         <script>
+            $(function () {
+                $('input[type="checkbox"]').click(function () {
+                    var id = stripid($(this).attr('id'));
+                    var something = 'HMMMM'; //$(this).attr('description');
+                    //var value=$(this).val();
+                    if ($(this).prop('checked')) {
+                        // do something
+                        something = 'Checked -- true';
+                        alert('idt:' + id + ' something:' + something);
+                        update_verification(id,'true');
+                    } else
+                    {
+                        something = 'unChecked -- false';
+                        alert('idf:' + id + ' something:' + something);
+                        update_verification(id,'false');
+                    }
+                });
+
+            });
 
             function msgme() {
                 obj = {landmark_type_data: document.getElementById('landmark_type').value};
                 var str_json = JSON.stringify(obj);
                 alert(str_json);
-                openme = "LocationType.php?name=" + str_json;
+                openme = "../Controller/LocationType.php?name=" + str_json;
                 //openme = "createTable.php?mindate=" + startdate + "&maxdate=" + enddate + parmlist;
                 alert(openme);
                 window.open(openme, "_self");
+            }
+            function update_verification(id,status) {
+                obj = {landmark_type_id:id, verification_indcator: status};
+                var str_json = JSON.stringify(obj);
+                alert(str_json);
+                openme = "../Controller/LocationType.php?name=" + str_json;
+                //openme = "createTable.php?mindate=" + startdate + "&maxdate=" + enddate + parmlist;
+                alert(openme);
+                window.open(openme, "_self");
+            }
+            function stripid(id)
+            {
+                id = id.replace("id", "");
+                return id;
             }
         </script>
 

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+<title>jQuery check / uncheck a check box example</title>
+
+<script type="text/javascript" src=../../js/jquery-1.11.2.js></script>
+<script type="text/javascript">
+
+  $(document).ready(function(){
+
+    $("#isCheck").click(function () {
+
+	alert($('input:checkbox[name=checkme]').is(':checked'));
+
+    });
+
+    $("#checkIt").click(function () {
+
+	$('input:checkbox[name=checkme]').attr('checked',true);
+
+    });
+
+    $("#UnCheckIt").click(function () {
+
+	$('input:checkbox[name=checkme]').attr('checked',false);
+
+    });
+
+  });
+  function Changed()
+  {
+   alert($('input:checkbox[name=checkme]').is(':checked'));  
+   if($('input:checkbox[name=checkme]').is(':checked'))
+   {
+       alert("Check box true");
+   }
+   else
+   {
+       alert("Check box false");
+   }
+  }
+</script>
+</head>
+
+<body>
+
+<h1>jQuery check / uncheck a check box example</h1>
+
+<input type="checkbox" name="checkme" onclick="Changed()">Check Me
+
+<br/>
+<br/>
+<br/>
+
+<input type='button' value='Is Check' id='isCheck'>
+<input type='button' value='Check It' id='checkIt'>
+<input type='button' value='UnCheck It' id='UnCheckIt'>
+
+</body>
+</html>

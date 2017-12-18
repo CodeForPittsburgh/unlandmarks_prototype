@@ -4,23 +4,14 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/xampp/htdocs/unlandmark/code/php/View/PlacesStatus.php</file>
-            <file>file:/C:/xampp/htdocs/unlandmark/code/php/includes/PlacesAddressInformation.php</file>
+            <file>file:/C:/xampp/htdocs/unlandmark/code/php/Controller/unlandmark_type_list.php</file>
+            <file>file:/C:/xampp/htdocs/unlandmark/code/php/prototypes/CheckBoxTest.html</file>
             <file>file:/C:/xampp/htdocs/unlandmark/code/php/View/index.php</file>
-            <file>file:/C:/xampp/htdocs/unlandmark/README.md</file>
-            <file>file:/C:/xampp/htdocs/unlandmark/code/php/View/message.php</file>
-            <file>file:/C:/xampp/htdocs/unlandmark/code/php/prototypes/ProcessCSVFile.php</file>
-            <file>file:/C:/xampp/htdocs/unlandmark/code/php/includes/LandmarkTypeOriginal.php</file>
-            <file>file:/C:/xampp/htdocs/unlandmark/code/php/Controller/DBUpdate.php</file>
-            <file>file:/C:/xampp/htdocs/unlandmark/code/php/View/UnlandmarkMaintenanceUtilities.php</file>
-            <file>file:/C:/xampp/htdocs/unlandmark/code/sql/unlandmarkpsql.sql</file>
-            <file>file:/C:/xampp/htdocs/unlandmark/code/php/includes/LandmarkTypeLoader.php</file>
-            <file>file:/C:/xampp/htdocs/unlandmark/code/php/prototypes/LoadLandmarkTypes.php</file>
-            <file>file:/C:/xampp/htdocs/unlandmark/code/php/View/Places.php</file>
-            <file>file:/C:/xampp/htdocs/unlandmark/code/php/includes/LandmarkTypeCurrent.php</file>
-            <file>file:/C:/xampp/htdocs/unlandmark/code/Data/LandmarkCountyTypes.csv</file>
             <file>file:/C:/xampp/htdocs/unlandmark/code/php/View/LocationTypeView.php</file>
-            <file>file:/C:/xampp/htdocs/unlandmark/code/php/prototypes/ReadCSVFile.php</file>
+            <file>file:/C:/xampp/htdocs/unlandmark/code/php/prototypes/CheckBoxTest2.html</file>
+            <file>file:/C:/xampp/htdocs/unlandmark/code/php/View/UnlandmarkMaintenanceUtilities.php</file>
             <file>file:/C:/xampp/htdocs/unlandmark/code/php/Model/LandmarkTypeClass.php</file>
+            <file>file:/C:/xampp/htdocs/unlandmark/code/php/Controller/LocationType.php</file>
         </group>
     </open-files>
 </project-private>

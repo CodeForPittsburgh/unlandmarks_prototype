@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+    $(function(){
+  $('input[type="checkbox"]').click(function(){
+    var id=$(this).attr('id');
+    var something = 'HMMMM'; //$(this).attr('description');
+    //var value=$(this).val();
+    if ($(this).prop('checked')){
+        // do something
+        something = 'Checked';
+        alert('idt:'+id+' something:'+something);
+        }
+        else
+        {
+            something = 'unChecked';
+           alert('idf:'+id+' something:'+something); 
+        }
+  });
+  
+});
+        </script>
+    </head>
+    <body>
+        <table border="1" cellspacing="2" cellpadding="2">
+            <tr>
+                <th>Description</th>
+                <th>Displayed?</th>
+            </tr>
+            <tr>
+                <td id="description1" >description1 </td>
+                <td><input type="checkbox"  id="id1" /></td>
+            </tr>
+            <tr>
+                <td id="description2" >description2</td>
+                <td><input type="checkbox"  id="id2" /></td>
+            </tr>
+            <tr>
+                <td id="description3" >description3</td>
+                <td><input type="checkbox"  id="id3" /></td>
+            </tr>
+
+        </table>
+        <div></div>
+
+    </body>
+</html>

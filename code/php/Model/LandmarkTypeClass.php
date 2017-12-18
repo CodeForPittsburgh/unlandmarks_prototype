@@ -16,6 +16,15 @@ class LandmarkTypeClass {
 
     private $landmark_type_id;
     private $landmark_type_description;
+    private $verification_indicator;
+
+    function getVerification_indicator() {
+        return $this->verification_indicator;
+    }
+
+    function setVerification_indicator($verification_indicator) {
+        $this->verification_indicator = addSingleQuote($verification_indicator);
+    }
 
     function getLandmark_type_id() {
         return $this->landmark_type_id;
@@ -65,7 +74,7 @@ SQL;
     }
 
     public function select_landmark_type_id() {
-        print "Description {$this->getLandmark_type_description()} <BR>";
+        // print "Description {$this->getLandmark_type_description()} <BR>";
         $sql = <<< SQL
             select landmark_type_id from unlandmark.landmark_type
 
@@ -75,7 +84,7 @@ SQL;
 
 SQL;
         //$this->resetLastSqlError();
-        print "SQL " . $sql . "<BR>";
+        //print "SQL " . $sql . "<BR>";
         //$result = "RESULT";
 
         $results = pg_query(DBCONN, $sql);
@@ -92,6 +101,48 @@ SQL;
 SQL;
         //$this->resetLastSqlError();
         //print "SQL " . $sql . "<BR>";
+        //$result = "RESULT";
+
+        $results = pg_query(DBCONN, $sql);
+        return $results;
+    }
+
+    public function select_all_landmark_types() {
+        $sql = <<< SQL
+                SELECT landmark_type_id,landmark_type_description,verification_indicator FROM unlandmark.landmark_type
+                order by landmark_type_description
+SQL;
+        //$this->resetLastSqlError();
+        //print "SQL " . $sql . "\n";
+        //$result = "RESULT";
+
+        $results = pg_query(DBCONN, $sql);
+        return $results;
+    }
+
+    public function select_landmark_verification($id) {
+        $sql = <<< SQL
+                select verification_indcator from unlandmark.landmark_type
+                where landmark_type_id = $id
+                
+SQL;
+        //$this->resetLastSqlError();
+        //print "SQL " . $sql . "\n";
+        //$result = "RESULT";
+
+        $results = pg_query(DBCONN, $sql);
+        return $results;
+    }
+
+    public function update_landmark_verification() {
+        $sql = <<< SQL
+                update unlandmark.landmark_type
+                set verification_indicator = {$this->getVerification_indicator()} 
+                where landmark_type_id = {$this->getLandmark_type_id()}
+                
+SQL;
+        //$this->resetLastSqlError();
+        print "SQL " . $sql . "\n";
         //$result = "RESULT";
 
         $results = pg_query(DBCONN, $sql);
