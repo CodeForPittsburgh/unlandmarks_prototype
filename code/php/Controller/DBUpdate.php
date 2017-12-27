@@ -11,18 +11,18 @@ include("../Model/LandmarkTypeClass.php");
 $x = "x";
 header("Content-Type: application/json; charset=UTF-8");
 $my_json = filter_input(INPUT_GET, $x);
-var_dump(json_decode($my_json, true));
+//var_dump(json_decode($my_json, true));
 $model_data = json_decode($my_json, true);
-$msg = "Address: " . $model_data["address"] . "<BR>";
-$msg .= " \tLat: " . $model_data["lat"] . "<BR>";
-$msg .= " \t Lng: " . $model_data["lng"] . "<BR>";
-$msg .= "\tformer_landmark_type: " . $model_data["former_landmark_type"] . "<BR>";
-$msg .= "\toriginal_description: " . $model_data["original_description"] . "<BR>";
-$msg .= "\tenddate: " . $model_data["enddate"] . "<BR>";
-$msg .= "\tcurrent_landmark_type: " . $model_data["current_landmark_type"] . "<BR>";
-$msg .= "\tcurrent_description: " . $model_data["current_description"] . "<BR>";
-$msg .= "\tlandmark_name: " . $model_data["landmark_name"] . "<BR>";
-$msg .= "\tnickname: " . $model_data["nickname"] . "<BR>";
+//$msg = "Address: " . $model_data["address"] . "<BR>";
+//$msg .= " \tLat: " . $model_data["lat"] . "<BR>";
+//$msg .= " \t Lng: " . $model_data["lng"] . "<BR>";
+//$msg .= "\tformer_landmark_type: " . $model_data["former_landmark_type"] . "<BR>";
+//$msg .= "\toriginal_description: " . $model_data["original_description"] . "<BR>";
+//$msg .= "\tenddate: " . $model_data["enddate"] . "<BR>";
+//$msg .= "\tcurrent_landmark_type: " . $model_data["current_landmark_type"] . "<BR>";
+//$msg .= "\tcurrent_description: " . $model_data["current_description"] . "<BR>";
+//$msg .= "\tlandmark_name: " . $model_data["landmark_name"] . "<BR>";
+//$msg .= "\tnickname: " . $model_data["nickname"] . "<BR>";
 
 $address = new AddressClass();
 //
@@ -33,7 +33,7 @@ $address->setgeocode_source(get_current_user());
 
 $result = $address->insert();
 //$msg .= "\t Result " . $result;
-$msg .= " \tAddress_id: " . $address->getAddress_id(). "<BR>";
+//$msg .= " \tAddress_id: " . $address->getAddress_id(). "<BR>";
 
 $landmark = new LandmarkTypeClass();
 $places = new PlacesClass();
@@ -58,6 +58,17 @@ $places->setVerification_indicator('FALSE');
 
 
 $result2 = $places->insert();
+$msg = "Address: " . $model_data["address"] . "<BR>";
+$msg .= " \tAddress_id: " . $address->getAddress_id(). "<BR>";
+$msg .= " \tLat: " . $model_data["lat"] . "<BR>";
+$msg .= " \t Lng: " . $model_data["lng"] . "<BR>";
+$msg .= "\tformer_landmark_type: " . replaceAmp($model_data["former_landmark_type"]) . "<BR>";
+$msg .= "\toriginal_description: " . replaceAmp($model_data["original_description"]) . "<BR>";
+$msg .= "\tenddate: " . $model_data["enddate"] . "<BR>";
+$msg .= "\tcurrent_landmark_type: " . replaceAmp($model_data["current_landmark_type"]) . "<BR>";
+$msg .= "\tcurrent_description: " .replaceAmp( $model_data["current_description"]) . "<BR>";
+$msg .= "\tlandmark_name: " . replaceAmp($model_data["landmark_name"]) . "<BR>";
+$msg .= "\tnickname: " .replaceAmp( $model_data["nickname"]) . "<BR>";
 //$msg .= " \tResult " . $result2 . "<BR>";
 $msg .= " \tLandmark_type_id: " . $landmark->getLandmark_type_id() . "<BR>";
 if ($landmark->getLandmark_type_id() > 0) {
@@ -77,3 +88,8 @@ header("Location:../view/message.php?message=" . $msg . "");
 //    echo '<script type="text/javascript">alert("' . $msg . '")</script>';
 //    //header("Location:../index.php");
 //}
+function replaceAmp($str)
+{
+    $res = str_replace('&', '%26', $str);
+    return $res;
+}

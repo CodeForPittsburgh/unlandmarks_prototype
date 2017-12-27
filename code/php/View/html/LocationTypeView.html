@@ -22,13 +22,13 @@ and open the template in the editor.
 
     <body>
         <?php include "../includes/CommonHeadings.php"; ?>
-<!--        <div class="container body-content">
+        <div class="container body-content">
 
 
             <div class="jumbotron" style="text-align:center; background-image:url(../../images/unlandmarks.jpg);background-size: 300px 350px;background-repeat: no-repeat;">
                 <h1>Welcomes you</h1>
-                <p> Location Utilities </p>
-            </div>-->
+                <p> Utilities </p>
+            </div>
 
             <div class="row">
                 <div class="col-sm-4">
@@ -40,59 +40,24 @@ and open the template in the editor.
 
                     </form>
                 </div>
-                <div class="col-sm-4">
-                    <?php include "../Controller/unlandmark_type_list.php"; ?>
-                </div>
             </div>
             <hr />
-            <?php include "../includes/footer.php"; ?>
+<?php include "../includes/footer.php"; ?>
         </div>
         <script>
-            $(function () {
-                $('input[type="checkbox"]').click(function () {
-                    var id = stripid($(this).attr('id'));
-                    var something = 'HMMMM'; //$(this).attr('description');
-                    //var value=$(this).val();
-                    if ($(this).prop('checked')) {
-                        // do something
-                        something = 'Checked -- true';
-                        alert('idt:' + id + ' something:' + something);
-                        update_verification(id,'true');
-                    } else
-                    {
-                        something = 'unChecked -- false';
-                        alert('idf:' + id + ' something:' + something);
-                        update_verification(id,'false');
-                    }
-                });
-
-            });
 
             function msgme() {
                 obj = {landmark_type_data: document.getElementById('landmark_type').value};
                 var str_json = JSON.stringify(obj);
                 alert(str_json);
-                openme = "../Controller/LocationType.php?name=" + str_json;
+                openme = "LocationType.php?name=" + str_json;
                 //openme = "createTable.php?mindate=" + startdate + "&maxdate=" + enddate + parmlist;
                 alert(openme);
                 window.open(openme, "_self");
-            }
-            function update_verification(id,status) {
-                obj = {landmark_type_id:id, verification_indcator: status};
-                var str_json = JSON.stringify(obj);
-                alert(str_json);
-                openme = "../Controller/LocationType.php?name=" + str_json;
-                //openme = "createTable.php?mindate=" + startdate + "&maxdate=" + enddate + parmlist;
-                alert(openme);
-                window.open(openme, "_self");
-            }
-            function stripid(id)
-            {
-                id = id.replace("id", "");
-                return id;
             }
         </script>
 
     </body>
 
 </html>
+

@@ -14,7 +14,7 @@
                         <li><a href="UnlandmarkMaintenanceUtilities.php">Utilities</a></li>
                         <li><a href="About.php">About</a></li>
                         <li><a href="Contacts.php">Contact</a></li>
-                        <li><a href="Version.php">Version 0.1.10</a></li>
+                        <li><a href="Version.php">Version 0.1.18</a></li>
                     </ul>
                     
                             <ul class="nav navbar-nav navbar-right">
@@ -25,3 +25,12 @@
                 </div>
             </div>
         </div>
+<!--        <div class="container body-content">
+            -->
+
+    <div class="jumbotron" style="text-align:center; background-image:url(../../images/unlandmarks.jpg);background-size: 300px 350px;background-repeat: no-repeat;">
+               
+                <h1>Code for Pittsburgh</h1>
+                <p class="lead"> Yinzers</p>
+    </div>
+            <div class="container body-content">

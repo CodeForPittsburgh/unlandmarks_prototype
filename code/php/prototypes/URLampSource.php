@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
 
     <head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>
-            Unlandmark Places Maintenance
+            Unlandmark URL Test
         </title>
         <script src="../../js/modernizr-2.6.2.js"></script>
         <script src="../../js/jquery-1.11.2.js" type="text/javascript"></script>
@@ -25,24 +19,11 @@ and open the template in the editor.
             }
         </style>
         <script>
-            //selected function
-            //Set places_id 
-            //call get places detail lookup
-            //call unlandmark_place_detail.php
 
-            function mySelected()
-            {
-               //alert("MySelected()");
-                var id = document.getElementById("landmark_places_list").value;
-                //var name = document.getElementById("name").value;
-                var x = " ID= " + id;
-                //alert("MySelected " + x);
-                document.getElementById("landmark_stuff").innerHTML = "You selected: " + x;
-                showDetails(id);
-            }
 
             function showDetails(id)
             {
+                id = replaceamp(id);
                 xmlhttp = new XMLHttpRequest();
 
                 xmlhttp.onreadystatechange = function ()
@@ -50,15 +31,21 @@ and open the template in the editor.
                     if (xmlhttp.readyState === 4 && xmlhttp.status === 200)
                     {
 
-                        document.getElementById("landmark_place_detail").innerHTML = xmlhttp.responseText;
+                        document.getElementById("URL_detail").innerHTML = xmlhttp.responseText;
                     }
                 };
                 obj = {places_id: id};
                 var str_json = JSON.stringify(obj);
-                openme = "../Controller/unlandmark_place_detail.php?name=" + str_json;
-                //alert(openme);
+                openme = "../prototypes/URLampTarget.php?name=" + str_json;
+                alert(openme);
                 xmlhttp.open("GET", openme);
                 xmlhttp.send();
+            }
+            function replaceamp(str)
+            {
+                var amp = '%26';
+                var res = str.replace("&", amp);
+                return res;
             }
         </script>
 
@@ -66,31 +53,27 @@ and open the template in the editor.
 
     <body>
         <?php include "../includes/CommonHeadings.php"; ?>
-<!--        <div class="container body-content">
+        <div class="container body-content">
 
 
             <div class="jumbotron" style="text-align:center; background-image:url(../../images/unlandmarks.jpg);background-size: 300px 350px;background-repeat: no-repeat;">
                 <h1>Welcomes you</h1>
-                <p> Places Utilities </p>
-            </div>-->
+                <p> URL Test </p>
+            </div>
 
             <div class="row">
-                <div class="col-sm-4" id="landmark_places_lists">
-                    <?php include "../Controller/unlandmark_places_list.php"; ?>
-                </div>
-                <div class="col-sm-4" id="landmark_place_detail" style="background-color: cyan" >
-                    <p>Address stuff goes here</p>
+
+                <div class="col-sm-4" id="URL_detail" style="background-color: cyan" >
+                    <p>URL stuff goes here</p>
                     <script>
-                        //var id = 53;
-                        //myload(id);
-                        showDetails('');
-                        //displayAddress(id);
+                        var amp = '%26';
+                        var message = 'BOB GEORGE & SALLY';
+                        showDetails(message);
+
                     </script>   
 
                 </div>
-                <div class="col-sm-4" id="landmark_stuff" style="background-color: lawngreen">
-                    <p>ID stuff goes here</p>
-                </div>
+
             </div>
             <hr />
             <?php include "../includes/footer.php"; ?>

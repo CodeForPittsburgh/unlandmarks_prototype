@@ -17,6 +17,69 @@ class LandmarkTypeClass {
     private $landmark_type_id;
     private $landmark_type_description;
     private $verification_indicator;
+    private $created_by;
+    private $created_time;
+    private $updated_by;
+    private $updated_time;
+    private $verified_by;
+    private $verified_time;
+    private $LandmarkTypeClassResults;
+
+    function getLandmarkTypeClassResults() {
+        return $this->LandmarkTypeClassResults;
+    }
+
+    function setLandmarkTypeClassResults($LandmarkTypeClassResults) {
+        $this->LandmarkTypeClassResults = $LandmarkTypeClassResults;
+    }
+
+    function getCreated_by() {
+        return $this->created_by;
+    }
+
+    function getCreated_time() {
+        return $this->created_time;
+    }
+
+    function getUpdated_by() {
+        return $this->updated_by;
+    }
+
+    function getUpdated_time() {
+        return $this->updated_time;
+    }
+
+    function getVerified_by() {
+        return $this->verified_by;
+    }
+
+    function getVerified_time() {
+        return $this->verified_time;
+    }
+
+    function setCreated_by($created_by) {
+        $this->created_by = $created_by;
+    }
+
+    function setCreated_time($created_time) {
+        $this->created_time = $created_time;
+    }
+
+    function setUpdated_by($updated_by) {
+        $this->updated_by = $updated_by;
+    }
+
+    function setUpdated_time($updated_time) {
+        $this->updated_time = $updated_time;
+    }
+
+    function setVerified_by($verified_by) {
+        $this->verified_by = $verified_by;
+    }
+
+    function setVerified_time($verified_time) {
+        $this->verified_time = $verified_time;
+    }
 
     function getVerification_indicator() {
         return $this->verification_indicator;
@@ -54,8 +117,8 @@ class LandmarkTypeClass {
          */
         $sql = <<< SQL
             INSERT INTO unlandmark.landmark_type
-            (landmark_type_description)
-                select {$this->getLandmark_type_description()}
+            (landmark_type_description,verification_indicator)
+                select {$this->getLandmark_type_description()},'true'
                 where not exists
                 (
                 select * from unlandmark.landmark_type 
@@ -149,4 +212,53 @@ SQL;
         return $results;
     }
 
+    public function select_landmark_by_id() {
+        $sql = <<< SQL
+            select landmark_type_id,
+                landmark_type_description,
+                verification_indicator,
+                created_by,
+                created_time,
+                updated_by,
+                updated_time,
+                verified_by,
+                verified_time 
+            from unlandmark.landmark_type
+                where landmark_type_id = {$this->getLandmark_type_id()}
+                
+SQL;
+
+
+        $results = pg_query(DBCONN, $sql);
+        $this->setLandmarkTypeClassResults($results);
+        $this->setLandmarkData();
+
+        //return $results;
+    }
+
+    public function setLandmarkData() {
+        $results = $this->getLandmarkTypeClassResults();
+        $rows = pg_fetch_row($results);
+        $this->setLandmark_type_id($rows[0]);
+        $this->setLandmark_type_description($rows[1]);
+        $this->setVerification_indicator($rows[2]);
+        $this->setCreated_by($rows[3]);
+        $this->setCreated_time($rows[4]);
+        $this->setUpdated_by($rows[5]);
+        $this->setUpdated_time($rows[6]);
+        $this->setVerified_by($rows[7]);
+        $this->setVerified_time($rows[8]);
+    }
+
+    /*
+     *   landmark_type_id,
+      landmark_type_description,
+      verification_indicator,
+      created_by,
+      created_time,
+      updated_by,
+      updated_time,
+      verified_by,
+      verified_time
+     */
 }

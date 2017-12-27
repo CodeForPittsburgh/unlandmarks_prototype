@@ -22,11 +22,11 @@ and open the template in the editor.
         <?php include "../includes/CommonHeadings.php"; ?>
 
 
-        <div class="container body-content">
+<!--        <div class="container body-content">
             <div class="jumbotron" style="text-align:center; background-image:url(../../images/unlandmarks.jpg);background-size: 300px 350px;background-repeat: no-repeat;">
                 <h1>Welcomes you</h1>
                 <p> Contacts </p>
-            </div>       
+            </div>       -->
             <h2>Contact</h2>
             <h3>Your contact page.</h3>
             <address>

@@ -22,11 +22,11 @@ and open the template in the editor.
         <?php include "../includes/CommonHeadings.php"; ?>
 
 
-        <div class="container body-content">
+<!--        <div class="container body-content">
              <div class="jumbotron" style="text-align:center; background-image:url(../../images/unlandmarks.jpg);background-size: 300px 350px;background-repeat: no-repeat;">
                 <h1>Welcomes you</h1>
                 <p> Version  </p>
-            </div>
+            </div>-->
             <h2>Version</h2>
             <h2>Our application development:</h2>
             <p>
@@ -37,6 +37,27 @@ and open the template in the editor.
 
                 <b>First phase</b><BR>
                 To get addresses and place information linked together<BR>
+            <ol>
+                <li >Start</li>
+                <li >Common Heading</li>
+                <li >Options</li>
+                <li >Addresses</li>
+                <li >GEO code addresses</li>
+                <li >Display map</li>
+                <li >Places</li>
+                <li >Input Testing</li>
+                <li >Landmark types</li>
+                <li >Check box list</li>
+                <li >Update database</li>
+                <li >Maintenance page</li>
+                <li >Maintenance of Landmark types</li>
+                <li >Maintenance of Places</li>
+                <li >Display of Places information</li>
+                <li >URL & parameter passing</li>
+                <li >Landmark Type database name updates</li>
+                <li >Common heading code update</li>
+                
+            </ol>
 
                 <b>Second phase</b><BR>
                 To get details (stories) about the unlandmark<BR>

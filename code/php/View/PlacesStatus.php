@@ -135,24 +135,24 @@ with the status information to be saved in the address table and the places tabl
             lng = document.getElementById('longitude').value;
             //alert(lng);
             var ef = document.getElementById('former_landmark_type');
-            former_landmark_type = ef.options[ef.selectedIndex].text;
+            former_landmark_type = escapeamp(ef.options[ef.selectedIndex].text);
             //alert(former_landmark_type);
             var ec = document.getElementById('current_landmark_type');
-            current_landmark_type = ec.options[ec.selectedIndex].text;
+            current_landmark_type = escapeamp(ec.options[ec.selectedIndex].text);
             //alert(current_landmark_type);
-            original_description = document.getElementById('original_description').value;
+            original_description = escapeamp(document.getElementById('original_description').value);
             //alert(original_description);
-            current_description = document.getElementById('current_description').value;
+            current_description = escapeamp(document.getElementById('current_description').value);
             //alert(current_description);
             enddate = document.getElementById('datepicker').value;
             //alert(enddate);
-            landmark_name = document.getElementById('landmark_name').value;
+            landmark_name = escapeamp(document.getElementById('landmark_name').value);
             //alert(landmark_name);
-            nickname = document.getElementById('nickname').value;
+            nickname = escapeamp(document.getElementById('nickname').value);
            // alert(nickname);
 
-            var message = landmark_name + ",\n" + nickname + ",\n" + address + ",\n " + lat + ", " + lng + ",\n" + former_landmark_type + ",\n " + original_description + ",\n" + enddate + ",\n" + current_landmark_type + ",\n " + current_description;
-            displayAlert(message);
+            //var message = landmark_name + ",\n" + nickname + ",\n" + address + ",\n " + lat + ", " + lng + ",\n" + former_landmark_type + ",\n " + original_description + ",\n" + enddate + ",\n" + current_landmark_type + ",\n " + current_description;
+            //displayAlert(message);
             obj = {"landmark_name": landmark_name, "nickname": nickname, "address": address, "lat": lat, "lng": lng, "former_landmark_type": former_landmark_type, "original_description": original_description, "enddate": enddate, "current_landmark_type": current_landmark_type, "current_description": current_description};
             document.getElementById("Save").disabled = false;
         }
@@ -164,7 +164,7 @@ with the status information to be saved in the address table and the places tabl
         function msgme() {
 
             var str_json = JSON.stringify(obj);
-            alert(str_json);
+            //alert(str_json);
             openme = "../Controller/DBUpdate.php?x=" + str_json;
             //openme = "createTable.php?mindate=" + startdate + "&maxdate=" + enddate + parmlist;
             alert(openme);
@@ -173,6 +173,16 @@ with the status information to be saved in the address table and the places tabl
         function displayAlert(message)
         {
             alert(message);
+        }
+        function addSingleQuote(description)
+        {
+            return "'" + description +"'";
+        }
+        function escapeamp(description)
+        {
+            var d = description.replace('&', '%26');
+            //alert(d);
+            return d;
         }
         $(function () {
             $("#datepicker").datepicker();

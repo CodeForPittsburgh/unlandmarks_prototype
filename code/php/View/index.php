@@ -22,44 +22,21 @@ and open the template in the editor.
 
     <body>
         <?php include "../includes/CommonHeadings.php"; ?>
-        <!--
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a href="./" class="navbar-brand">UNLANDMARK</a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="./">Home</a></li>
-                        <li><a href="About.php">About</a></li>
-                        <li><a href="Contacts.php">Contact</a></li>
-                    </ul>
-                    
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a href="Register.php">Register</a></li>
-                                <li><a href="Login.php">Log in</a></li>
-                            </ul>
-                        
-                </div>
-            </div>
-        </div>
-        -->
-        <div class="container body-content">
+
+<!--        <div class="container body-content">
             
 
     <div class="jumbotron" style="text-align:center; background-image:url(../../images/unlandmarks.jpg);background-size: 300px 350px;background-repeat: no-repeat;">
+        
         <h1>Welcomes you</h1>
+        
         <p class="lead">Code for Pittsburgh</p>
         <p><a href="About.php" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-    </div>
+        
+    </div>-->
 
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-sm-4">
             <h2>Getting started</h2>
             <p>
                 Add the Unlandmark name and address information and run process to geo-code (get lat and lng)
@@ -69,7 +46,7 @@ and open the template in the editor.
                 <a class="btn btn-default" href="Places.php">Places &raquo;</a>
             </p>
         </div>
-        <div class="col-md-4">
+        <div class="col-sm-4">
             <h2>Add more detail</h2>
             <p>
                 You can add narratives, web links and personal accounts
@@ -78,7 +55,7 @@ and open the template in the editor.
                 <a class="btn btn-default disabled" href="Stories.php">Stories &raquo;</a>
             </p>
         </div>
-        <div class="col-md-4">
+        <div class="col-sm-4">
             <h2>Show on the map</h2>
             <p>
                 Lets see what it looks like on the map.

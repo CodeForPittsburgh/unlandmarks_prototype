@@ -16,11 +16,17 @@ $model_data = json_decode($my_json, true);
 $ltd = $model_data["landmark_type_data"];
 $lti = $model_data["landmark_type_id"];
 $vi = $model_data["verification_indcator"];
+$msg = "Landmark type ". $ltd . "<BR>";
 if ($ltd === null) {
     update($lti, $vi);
+    $msg .= " \tRecord updated: " . "<BR>";
 } else {
     insert($ltd);
+    $msg .= " \tRecord added: " . "<BR>";
 }
+
+print $msg . "\n";
+header("Location:../view/message.php?message=" . $msg . "");
 
 function insert($landmark_type_data) {
     $verification_indicator = 'true';

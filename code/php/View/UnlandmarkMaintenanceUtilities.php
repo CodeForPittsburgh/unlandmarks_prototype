@@ -23,26 +23,26 @@ and open the template in the editor.
     <body>
 
         <?php include "../includes/CommonHeadings.php"; ?>
-        <div class="container body-content">
+<!--        <div class="container body-content">
 
 
             <div class="jumbotron" style="text-align:center; background-image:url(../../images/unlandmarks.jpg);background-size: 300px 350px;background-repeat: no-repeat;">
                 <h1>Welcomes you</h1>
                 <p> Utilities </p>
-            </div>
+            </div>-->
 
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-sm-4">
                     <h2>Unlandmark Maintenance</h2>
                     <p>
                         Maintaining Unlandmark information 
                     </p>
 
                     <p>
-                        <a class="btn btn-default disabled" href="Maintenance.php">Data Maintenance &raquo;</a>
+                        <a class="btn btn-default" href="Maintenance.php">Data Maintenance &raquo;</a>
                     </p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-sm-4">
                     <h2>Location Maintenance</h2>
                     <p>
                         Add new locations types to the database
@@ -52,7 +52,7 @@ and open the template in the editor.
                         <a class="btn btn-default" href="LocationTypeView.php">Location Maintenance &raquo;</a>
                     </p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-sm-4">
                     <h2>Unlandmark Verification</h2>
                     <p>
                         Verification of Unlandmark information (restricted access)
