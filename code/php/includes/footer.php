@@ -9,3 +9,4 @@
 print "<footer>" . "<BR>";
 print "<p>&copy; ". date("Y") . " - Code for Pittsburgh</p>";
 print "</footer>" . "<BR";
+print "</div>" . "<BR";

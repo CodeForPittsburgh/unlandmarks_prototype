@@ -48,17 +48,17 @@ and open the template in the editor.
         </div>
         -->
         <div class="container body-content">
-            
-    <h2>Map</h2>
-    <h2>Map it:</h2>
-    <p>
-        UNlandmark on the map.
-    </p>
+
+            <h2>Map</h2>
+            <h2>Map it:</h2>
+            <p>
+                UNlandmark on the map.
+            </p>
 
             <hr />
             <?php include "../includes/footer.php"; ?>
-        </div>
-    
+
+
 
     </body>
 </html>

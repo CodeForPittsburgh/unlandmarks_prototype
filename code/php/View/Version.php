@@ -37,6 +37,7 @@ and open the template in the editor.
 
                 <b>First phase</b><BR>
                 To get addresses and place information linked together<BR>
+            </p>
             <ol>
                 <li >Start</li>
                 <li >Common Heading</li>
@@ -56,6 +57,7 @@ and open the template in the editor.
                 <li >URL & parameter passing</li>
                 <li >Landmark Type database name updates</li>
                 <li >Common heading code update</li>
+                <li >Common heading code added Help -- Needs instructions</li>
                 
             </ol>
 
@@ -63,6 +65,12 @@ and open the template in the editor.
                 To get details (stories) about the unlandmark<BR>
                 This could be URL, photos, narratives, etc<BR>
                 Each of these presents unique coding challenges<BR>
+                            <ol>
+                <li >Start</li>
+                <li >Added empty stories form -- needs code support</li>
+
+                
+            </ol>
 
                 <b>Third phase</b><BR>
                 Map the unlandmark locations we have in the database<BR>
@@ -97,11 +105,10 @@ and open the template in the editor.
                 The prototype is in PHP, HTML, JavaScript and CSS because if I wrote in Java your heads would explode.<BR>
 
 
-            </p>
 
             <hr />
             <?php include "../includes/footer.php"; ?>
-        </div>
+
 
     </body>
 </html>

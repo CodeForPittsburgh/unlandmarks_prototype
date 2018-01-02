@@ -141,8 +141,14 @@ WITH (
   OIDS=FALSE
 );
 
-    CREATE TRIGGER stories_stamp BEFORE INSERT OR UPDATE ON unlandmark.stories
-    FOR EACH ROW EXECUTE PROCEDURE users_stamp();
+    CREATE TRIGGER insert_stories_stamp BEFORE INSERT ON unlandmark.stories
+    FOR EACH ROW EXECUTE PROCEDURE create_users_stamp();
+
+    CREATE TRIGGER update_stories_stamp BEFORE UPDATE ON unlandmark.stories
+    FOR EACH ROW EXECUTE PROCEDURE update_users_stamp();
+
+    CREATE TRIGGER verify_stories_stamp BEFORE UPDATE ON unlandmark.stories
+    FOR EACH ROW EXECUTE PROCEDURE verify_users_stamp();
 -------------------------------------------------
 DROP TABLE IF EXISTS unlandmark.PlaceStories;
 CREATE TABLE unlandmark.PlaceStories (

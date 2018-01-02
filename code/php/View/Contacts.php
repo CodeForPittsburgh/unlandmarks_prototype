@@ -42,7 +42,7 @@ and open the template in the editor.
 
             <hr />
             <?php include "../includes/footer.php"; ?>
-        </div>
+
 
     </body>
 </html>

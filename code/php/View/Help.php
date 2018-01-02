@@ -5,10 +5,9 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-
     <head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>
-            Home Page - UNLANDMARK
+            Home Page - Help
         </title>
         <script src="../../js/modernizr-2.6.2.js"></script>
         <script src="../../js/jquery-1.11.2.js" type="text/javascript"></script>
@@ -19,41 +18,17 @@ and open the template in the editor.
         <link href="../../css/Site.css" rel="stylesheet"/>
         <link href="../../images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     </head>
-
     <body>
         <?php include "../includes/CommonHeadings.php"; ?>
 
-    <div class="row">
-        <div class="col-sm-4">
-            <h2>Getting started</h2>
-            <p>
-                Add the Unlandmark name and address information and run process to geo-code (get lat and lng)
-            </p>
 
-            <p>
-                <a class="btn btn-default" href="Places.php">Places &raquo;</a>
-            </p>
-        </div>
-        <div class="col-sm-4">
-            <h2>Add more detail</h2>
-            <p>
-                You can add narratives, web links and personal accounts
-            </p>
-            <p>
-                <a class="btn btn-default" href="Stories.php">Stories &raquo;</a>
-            </p>
-        </div>
-        <div class="col-sm-4">
-            <h2>Show on the map</h2>
-            <p>
-                Lets see what it looks like on the map.
-            </p>
-            <p>
-                <a class="btn btn-default disabled" href="Map.php">Map it &raquo;</a>
-            </p>
-        </div>
-    </div>
-
+<!--        <div class="container body-content">
+            <div class="jumbotron" style="text-align:center; background-image:url(../../images/unlandmarks.jpg);background-size: 300px 350px;background-repeat: no-repeat;">
+                <h1>Welcomes you</h1>
+                <p> Contacts </p>
+            </div>       -->
+            <h2>Help</h2>
+ 
 
             <hr />
             <?php include "../includes/footer.php"; ?>

@@ -13,13 +13,16 @@ $places = new PlacesClass();
 $address = new AddressClass();
 $landmarktype = new LandmarkTypeClass();
 
-$result = $places->select_lowest_id();
+//$result = $places->select_lowest_id();
+$result = $places->select_all();
 while ($row = pg_fetch_row($result)) {
 
     $places_id = $row[0];
     $landmark_name = $row[1];
-    echo 'ID: ' . $places_id;
-    echo ' NAME: ' . $landmark_name;
+    $nick_name = $row[2];
+    echo 'ID: ' . $places_id . "<BR>";
+    echo ' NAME: ' . $landmark_name . "<BR>";
+    echo ' NICK NAME: ' . $nick_name . "<BR>";
    
 }
 //$result = $places->select_all_id(54);

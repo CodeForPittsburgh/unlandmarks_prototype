@@ -15,55 +15,7 @@
         <link href="../../css/Site.css" rel="stylesheet"/>
         <link href="../../images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
-        <style>
-            #map {
-                height: 500px;
-                width: 550px;
-                float: right;
-            }
-            #controls {
-                position: relative;
-                width: 480px;
-            }
-            #autocomplete {
-                position: relative;
-                top: 0px;
-                left: 0px;
-                width: 550px;
-                height: 20px;
-            }
-            .label {
-                text-align: right;
-                font-weight: bold;
-                width: 100px;
-                color: #303030;
-            }
-            #address {
-                border: 1px solid #000090;
-                background-color: #f0f0ff;
-                width: 480px;
-                padding-right: 2px;
-            }
-            #address td {
-                font-size: 10pt;
-            }
-            .field {
-                width: 99%;
-            }
-            .slimField {
-                width: 80px;
-            }
-            .wideField {
-                width: 200px;
-            }
-            .locationField {
-                position: fixed;
-                width: 480px;
-                height: 20px;
-                margin-bottom: 2px;
-            }
-
-        </style>
+        
     </head>
     <?php include "../includes/CommonHeadings.php"; ?>
 

@@ -32,7 +32,7 @@ and open the template in the editor.
 
             function mySelected()
             {
-               //alert("MySelected()");
+                //alert("MySelected()");
                 var id = document.getElementById("landmark_places_list").value;
                 //var name = document.getElementById("name").value;
                 var x = " ID= " + id;
@@ -44,7 +44,6 @@ and open the template in the editor.
             function showDetails(id)
             {
                 xmlhttp = new XMLHttpRequest();
-
                 xmlhttp.onreadystatechange = function ()
                 {
                     if (xmlhttp.readyState === 4 && xmlhttp.status === 200)
@@ -66,35 +65,40 @@ and open the template in the editor.
 
     <body>
         <?php include "../includes/CommonHeadings.php"; ?>
-<!--        <div class="container body-content">
+        <!--        <div class="container body-content">
+        
+        
+                    <div class="jumbotron" style="text-align:center; background-image:url(../../images/unlandmarks.jpg);background-size: 300px 350px;background-repeat: no-repeat;">
+                        <h1>Welcomes you</h1>
+                        <p> Places Utilities </p>
+                    </div>-->
 
-
-            <div class="jumbotron" style="text-align:center; background-image:url(../../images/unlandmarks.jpg);background-size: 300px 350px;background-repeat: no-repeat;">
-                <h1>Welcomes you</h1>
-                <p> Places Utilities </p>
-            </div>-->
-
-            <div class="row">
-                <div class="col-sm-4" id="landmark_places_lists">
-                    <?php include "../Controller/unlandmark_places_list.php"; ?>
-                </div>
-                <div class="col-sm-4" id="landmark_place_detail" style="background-color: cyan" >
-                    <p>Address stuff goes here</p>
-                    <script>
-                        //var id = 53;
-                        //myload(id);
-                        showDetails('');
-                        //displayAddress(id);
-                    </script>   
-
-                </div>
-                <div class="col-sm-4" id="landmark_stuff" style="background-color: lawngreen">
-                    <p>ID stuff goes here</p>
-                </div>
+        <div class="row">
+            <div class="col-sm-4" id="landmark_places_lists">
+                <?php include "../Controller/unlandmark_places_list.php"; ?>
+                <script>;
+                    document.getElementById("landmark_places_list").selectedIndex = "0";
+                    var id = document.getElementById("landmark_places_list").value;
+                    showDetails(id);
+                </script>;
             </div>
-            <hr />
-            <?php include "../includes/footer.php"; ?>
+            <div class="col-sm-4" id="landmark_place_detail" style="background-color: cyan" >
+                <p>Address stuff goes here</p>
+                <script>
+                    //var id = 53;
+                    //myload(id);
+                    showDetails('');
+                    //displayAddress(id);
+                </script>   
+
+            </div>
+            <div class="col-sm-4" id="landmark_stuff" style="background-color: lawngreen">
+                <p>ID stuff goes here</p>
+            </div>
         </div>
+        <hr />
+        <?php include "../includes/footer.php"; ?>
+
 
 
     </body>

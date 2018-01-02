@@ -23,13 +23,7 @@ and open the template in the editor.
     <body>
 
         <?php include "../includes/CommonHeadings.php"; ?>
-<!--        <div class="container body-content">
 
-
-            <div class="jumbotron" style="text-align:center; background-image:url(../../images/unlandmarks.jpg);background-size: 300px 350px;background-repeat: no-repeat;">
-                <h1>Welcomes you</h1>
-                <p> Utilities </p>
-            </div>-->
 
             <div class="row">
                 <div class="col-sm-4">
@@ -67,7 +61,7 @@ and open the template in the editor.
 
             <hr />
             <?php include "../includes/footer.php"; ?>
-        </div>
+
 
     </body>
 </html>

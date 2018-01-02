@@ -16,47 +16,104 @@ and open the template in the editor.
 
         <link href="../../css/bootstrap.css" rel="stylesheet"/>
         <link href="../../css/Site.css" rel="stylesheet"/>
+        <link href="../../css/unlandmark.css" rel="stylesheet"/>
         <link href="../../images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <script>
+            //selected function
+            //Set places_id 
+            //call get places detail lookup
+            //call unlandmark_place_detail.php
+
+            function mySelected()
+            {
+                //alert("MySelected()");
+                //document.getElementById("landmark_places_list").selectedIndex = "0";
+                var id = document.getElementById("landmark_places_list").value;
+                //var name = document.getElementById("name").value;
+                //var x = " ID= " + id;
+                //alert("MySelected " + id);
+
+                //document.getElementById("landmark_name").innerHTML = "You selected: " + id;
+                showDetails(id);
+            }
+            function showDetails(id)
+            {
+                xmlhttp = new XMLHttpRequest();
+
+                xmlhttp.onreadystatechange = function ()
+                {
+                    if (xmlhttp.readyState === 4 && xmlhttp.status === 200)
+                    {
+
+                        document.getElementById("landmark_name").innerHTML = xmlhttp.responseText;
+                    }
+                };
+                obj = {places_id: id};
+                var str_json = JSON.stringify(obj);
+                openme = "../Controller/unlandmark_places_name.php?name=" + str_json;
+                //alert(openme);
+                xmlhttp.open("GET", openme);
+                xmlhttp.send();
+            }
+        </script>
     </head>
     <body>
         <?php include "../includes/CommonHeadings.php"; ?>
-        <!--
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a href="./" class="navbar-brand">UNLANDMARK</a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="./">Home</a></li>
-                        <li><a href="About.html">About</a></li>
-                        <li><a href="Contacts.html">Contact</a></li>
-                    </ul>
 
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="Register.html">Register</a></li>
-                        <li><a href="Login.html">Log in</a></li>
-                    </ul>
+        <div class="container body-content">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h2>Stories</h2>
+                    <p>
+                        Pittsburghers like to tell their stores. Now is your chance to add information: Select a unlandmark name to begin.
+                    </p>
+                    <?php
+                    include("../Controller/unlandmark_places_list.php");
+                    ?>
+                    <script>;
+                        document.getElementById("landmark_places_list").selectedIndex = "0";
+                        var id = document.getElementById("landmark_places_list").value;
+                        showDetails(id);
+                    </script>;
+                </div>
+                <div class="col-sm-8">
+                    <h2>Add more detail</h2>
+                    <table id="stories">
+                        <tr>
+                            <td class="label">Landmark Name</td>
+                            <td class="wideField" id="landmark_name"></td>
+                        </tr>
+
+                        <td class="label">Research_notes</td>
+                        <td class="wideField" ><input class="field" id="Research_notes"></td>
+                        </tr>
+                        <tr>
+                            <td class="label">Research_sources</td>
+
+                            <td class="wideField" ><input class="field" id="Research_sources"></td>
+                        </tr>
+                        <tr>
+                            <td class="label">Personal_history_text</td>
+                            <td class="wideField"><input class="field" id="Personal_history_text"></td>
+                        </tr>
+                        <tr>
+                            <td class="label">Personal_history_subject</td>
+                            <td class="wideField" ><input class="field" id="Personal_history_subject" ></td>
+                        </tr>
+                        <tr>
+                            <td class="label">Personal_history_recorder</td>
+                            <td class="wideField" ><input class="field" id="Personal_history_recorder" ></td>
+                        </tr>
+                        <tr>
+                            <td class="label">Followup_email</td> 
+                            <td class="wideField" ><input class="field" id="Followup_email" ></td>
+                        </tr>
+                    </table>
 
                 </div>
             </div>
-        </div>
-        -->
-        <div class="container body-content">
-
-            <h2>Stories</h2>
-            <h2>Our stories:</h2>
-            <p>
-                Pittsburghers like to tell their stores. Now is your chance.
-            </p>
-
             <hr />
             <?php include "../includes/footer.php"; ?>
-        </div>
+
     </body>
 </html>

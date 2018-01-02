@@ -18,35 +18,6 @@ and open the template in the editor.
         <link href="../../css/bootstrap.css" rel="stylesheet"/>
         <link href="../../css/Site.css" rel="stylesheet"/>
         <link href="../../images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    </head>
-
-    <body>
-        <?php include "../includes/CommonHeadings.php"; ?>
-<!--        <div class="container body-content">
-
-
-            <div class="jumbotron" style="text-align:center; background-image:url(../../images/unlandmarks.jpg);background-size: 300px 350px;background-repeat: no-repeat;">
-                <h1>Welcomes you</h1>
-                <p> Location Utilities </p>
-            </div>-->
-
-            <div class="row">
-                <div class="col-sm-4">
-                    <form>
-                        <input type="text" id="landmark_type" size="35">
-                        <!-- <input type="submit" class="button" name="insert" value="insert" /> -->
-                        <!-- <button id="Save" name="name" >Save</button> -->
-                        <button id="Save" name="Save" type="button" onclick="msgme()">Save &raquo;</button>
-
-                    </form>
-                </div>
-                <div class="col-sm-4">
-                    <?php include "../Controller/unlandmark_type_list.php"; ?>
-                </div>
-            </div>
-            <hr />
-            <?php include "../includes/footer.php"; ?>
-        </div>
         <script>
             $(function () {
                 $('input[type="checkbox"]').click(function () {
@@ -57,12 +28,12 @@ and open the template in the editor.
                         // do something
                         something = 'Checked -- true';
                         alert('idt:' + id + ' something:' + something);
-                        update_verification(id,'true');
+                        update_verification(id, 'true');
                     } else
                     {
                         something = 'unChecked -- false';
                         alert('idf:' + id + ' something:' + something);
-                        update_verification(id,'false');
+                        update_verification(id, 'false');
                     }
                 });
 
@@ -77,8 +48,8 @@ and open the template in the editor.
                 alert(openme);
                 window.open(openme, "_self");
             }
-            function update_verification(id,status) {
-                obj = {landmark_type_id:id, verification_indcator: status};
+            function update_verification(id, status) {
+                obj = {landmark_type_id: id, verification_indcator: status};
                 var str_json = JSON.stringify(obj);
                 alert(str_json);
                 openme = "../Controller/LocationType.php?name=" + str_json;
@@ -92,7 +63,31 @@ and open the template in the editor.
                 return id;
             }
         </script>
+    </head>
 
+    <body>
+        <?php include "../includes/CommonHeadings.php"; ?>
+
+
+        <div class="row">
+            <div class="col-sm-4">
+                <form>
+                    <input type="text" id="landmark_type" size="35">
+                    <!-- <input type="submit" class="button" name="insert" value="insert" /> -->
+                    <!-- <button id="Save" name="name" >Save</button> -->
+                    <button id="Save" name="Save" type="button" onclick="msgme()">Save &raquo;</button>
+
+                </form>
+            </div>
+            <div class="col-sm-4">
+                <?php include "../Controller/unlandmark_type_list.php"; ?>
+            </div>
+        </div>
+        <hr />
+        <?php include "../includes/footer.php"; ?>
     </body>
+
+
+
 
 </html>

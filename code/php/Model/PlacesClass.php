@@ -202,7 +202,25 @@ SQL;
 
     public function select_all() {
         $sql = <<< SQL
-            select * from unlandmark.places
+            select 
+            places_id,
+            landmark_name, 
+            nickname, 
+            address_id,
+            original_use_type_id, 
+            original_use,
+            end_date, 
+            current_use_type_id, 
+            current_use,
+            stories__id, 
+            verification_indicator, 
+            created_by,
+            created_time,
+            updated_by,
+            updated_time,
+            verified_by,
+            verified_time
+                from unlandmark.places
                 order by landmark_name
  
 SQL;
