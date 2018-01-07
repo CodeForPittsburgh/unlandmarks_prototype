@@ -22,7 +22,7 @@
     <div class="container" >
 
         <h2>Messages</h2>
-        <h3>UNLANDMARK message Page.</h3>
+        <h3>UNLANDMARK Message Page.</h3>
         <p>&nbsp;</p>
         <p>&nbsp;</p>
 
@@ -30,17 +30,13 @@
             <div class="col-sm-4" style="background-color:whitesmoke; height: 500px">
                 <div id="message">
                 </div>
-                <!-- calendar css needed -->
+
                 <?php
                 $message = 'message';
 
 
                 $my_message = filter_input(INPUT_GET, $message);
                 echo '<p id="message" >' . $my_message . '</p>';
-
-                //echo '<input readonly type="text" id="message" value=' . $my_message . '><br>';
-                //$msg = "database successfully update";
-                //phpAlert($$my_message);
 
                 function phpAlert($msg) {
                     echo '<script type="text/javascript">alert("' . $msg . '")</script>';

@@ -224,9 +224,6 @@ SQL;
                 order by landmark_name
  
 SQL;
-        //$this->resetLastSqlError();
-        //print "SQL " . $sql . "<BR>";
-        //$result = "RESULT";
 
         $result = pg_query(DBCONN, $sql);
 
@@ -239,9 +236,6 @@ SQL;
             where places_id = {$this->getPlaces_id()}
  
 SQL;
-        //$this->resetLastSqlError();
-        //print "SQL " . $sql . "<BR>";
-        //$result = "RESULT";
 
         $result = pg_query(DBCONN, $sql);
 
@@ -256,14 +250,35 @@ SQL;
                 limit 1
  
 SQL;
-        //$this->resetLastSqlError();
-        //print "SQL " . $sql . "<BR>";
-        //$result = "RESULT";
 
         $result = pg_query(DBCONN, $sql);
 
         $row = pg_fetch_row($result);
         return $row[0];
+    }
+
+    function getPlaces() {
+
+        $result = pg_query(DBCONN, 'SELECT * FROM unlandmark.places');
+        $places_array = pg_fetch_all($result);
+        return $places_array;
+    }
+
+    function getPlaces2() {
+
+        $result = pg_query(DBCONN, 'SELECT * FROM get_all_places()');
+        $places_array = pg_fetch_all($result);
+        return $places_array;
+    }
+
+    function preptest() {
+        $result = pg_prepare(DBCONN, "my_query", 'SELECT * FROM unlandmark.places WHERE landmark_name = $1');
+        return $result;
+    }
+
+    function prepexecute() {
+        $result = pg_execute(DBCONN, "my_query", array("Arby's"));
+        return $result;
     }
 
 }

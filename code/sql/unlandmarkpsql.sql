@@ -312,3 +312,51 @@ WITH (
     FOR EACH ROW EXECUTE PROCEDURE users_stamp();
 
 ------------------------------------------
+
+drop function get_all_places();
+
+CREATE OR REPLACE FUNCTION get_all_places()
+  RETURNS TABLE(
+            places_id integer,
+            landmark_name character varying, 
+            nickname character varying, 
+            address_id integer,
+            original_use_type_id integer, 
+            original_use text,
+            end_date character varying, 
+            current_use_type_id integer, 
+            current_use text,
+            stories__id integer, 
+            verification_indicator boolean, 
+            created_by character varying,
+            created_time timestamp without time zone,
+            updated_by character varying,
+            updated_time timestamp without time zone,
+            verified_by character varying,
+            verified_time timestamp without time zone) AS
+$$
+BEGIN
+ RETURN QUERY 
+ 
+ SELECT p.places_id,
+            p.landmark_name, 
+            p.nickname, 
+            p.address_id,
+            p.original_use_type_id, 
+            p.original_use,
+            p.end_date, 
+            p.current_use_type_id, 
+            p.current_use,
+            p.stories__id, 
+            p.verification_indicator, 
+            p.created_by,
+            p.created_time,
+            p.updated_by,
+            p.updated_time,
+            p.verified_by,
+            p.verified_time
+ FROM unlandmark.places p
+ order by p.landmark_name;
+END; $$
+ 
+LANGUAGE plpgsql;

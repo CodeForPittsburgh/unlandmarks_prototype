@@ -9,31 +9,114 @@ include("LandmarkTypeClass.php");
  * and open the template in the editor.
  */
 
-$places = new PlacesClass();
-$address = new AddressClass();
-$landmarktype = new LandmarkTypeClass();
+//test2();
+//test3();
+test4();
 
+function test1() {
+    $places = new PlacesClass();
+//$address = new AddressClass();
+//$landmarktype = new LandmarkTypeClass();
 //$result = $places->select_lowest_id();
-$result = $places->select_all();
-while ($row = pg_fetch_row($result)) {
+    $result = $places->select_all();
+    while ($row = pg_fetch_row($result)) {
 
-    $places_id = $row[0];
-    $landmark_name = $row[1];
-    $nick_name = $row[2];
-    echo 'ID: ' . $places_id . "<BR>";
-    echo ' NAME: ' . $landmark_name . "<BR>";
-    echo ' NICK NAME: ' . $nick_name . "<BR>";
-   
+        $places_id = $row[0];
+        $landmark_name = $row[1];
+        $nick_name = $row[2];
+        echo 'ID: ' . $places_id . "<BR>";
+        echo ' NAME: ' . $landmark_name . "<BR>";
+        echo ' NICK NAME: ' . $nick_name . "<BR>";
+    }
 }
-//$result = $places->select_all_id(54);
-////print "Result " . $result . "<BR>";
-////echo '<select id="landmark_places_list">';
+
+function test2() {
+    $places = new PlacesClass();
+    $rows = $places->getPlaces();
+    $row_count = count($rows);
+
+    echo "Array Size " . $row_count . "<BR>";
+    echo "<hr>";
+
+    print_r($rows);
+    echo "<hr>";
+    for ($x = 0; $x < $row_count; $x++) {
+        $row = $rows[$x];
+        print_r($row);
+        echo "<hr>";
+        $places_id = $row['places_id'];
+        echo "ID " . $places_id . "<BR>";
+        $landmark_name = $row['landmark_name'];
+        echo "Name " . $landmark_name . "<BR>";
+        $nickname = $row['nickname'];
+        echo "Nickname " . $nickname . "<BR>";
+        echo "<hr>";
+    }
+}
+
+function test3() {
+    $places = new PlacesClass();
+    $rows = $places->getPlaces2();
+    $row_count = count($rows);
+
+    echo "Array Size " . $row_count . "<BR>";
+    echo "<hr>";
+
+    print_r($rows);
+    echo "<hr>";
+    for ($x = 0; $x < $row_count; $x++) {
+        $row = $rows[$x];
+        print_r($row);
+        echo "<hr>";
+        $places_id = $row['places_id'];
+        echo "ID " . $places_id . "<BR>";
+        $landmark_name = $row['landmark_name'];
+        echo "Name " . $landmark_name . "<BR>";
+        $nickname = $row['nickname'];
+        echo "Nickname " . $nickname . "<BR>";
+        echo "<hr>";
+    }
+}
+
+function test4() {
+    $places = new PlacesClass();
+    $rowspt = $places->preptest();
+    $row_countpt = count($rowspt);
+    echo "Array Size " . $row_countpt . "<BR>";
+    echo "<hr>";
+    
+    $rows = $places->prepexecute();
+    $row_count = count($rows);
+
+    echo "Array Size " . $row_count . "<BR>";
+    echo "<hr>";
+
+    print_r($rows);
+    echo "<hr>";
+    for ($x = 0; $x < $row_count; $x++) {
+        $row = $rows[$x];
+        print_r($row);
+        echo "<hr>";
+        $places_id = $row['places_id'];
+        echo "ID " . $places_id . "<BR>";
+        $landmark_name = $row['landmark_name'];
+        echo "Name " . $landmark_name . "<BR>";
+        $nickname = $row['nickname'];
+        echo "Nickname " . $nickname . "<BR>";
+        echo "<hr>";
+    }
+}
+
 //
-//while ($row = pg_fetch_row($result)) {
+    //while ($row = pg_fetch_row($rs)) {
 //
 //    $places_id = $row[0];
+//    echo "ID " . $places_id . "<BR>";
 //    $landmark_name = $row[1];
+//    echo "Name " . $landmark_name . "<BR>";
 //    $nickname = $row[2];
+//    echo "Nickname " . $nickname . "<BR>";
+//    echo "<hr>";
 //    
 //    $address_id = $row[3];
 //    $address->setAddress_id($address_id);
@@ -74,6 +157,7 @@ while ($row = pg_fetch_row($result)) {
 //   echo '                     <td class="wideField"><input class="field" id="current_description" value="'.$current_description.'" disabled></td>';
 //   echo '                 </tr>';
 //   echo '  </table>';
+    //}
 //}
 
 //echo "</select>";
