@@ -7,11 +7,11 @@
  */
 //INSERT INTO unlandmark.address( current_address, geocode_source, location_latlng) VALUES ('3380 Boulevard of the Allies', 'USER',(ST_GeomFromText('POINT(10.809003 54.097834)',4326)) );
 //update your_table set geom=st_SetSrid(st_MakePoint(longitude, latitude), 4326);
-$sampleurl = "https://maps.googleapis.com/maps/api/geocode/xml?address=+200+block+Jacksonia+St,+Pittsburgh,+PA&key=AIzaSyCb3EA0lfao273s6Jkp8tfTzJfUSkswpOw";
-//SELECT st_asewkt('0101000020E6100000BBD05CA79138444055A1815836FD53C0')
+$sampleurl = "https://maps.googleapis.com/maps/api/geocode/xml?address=+200+block+Jacksonia+St,+Pittsburgh,+PA&key=";
 
 
-$googlekey = "AIzaSyCb3EA0lfao273s6Jkp8tfTzJfUSkswpOw";
+
+$googlekey = "";
 $address = "4429+Kennywood+Blvd";
 $city = "West+Mifflin";
 $state = "PA";
@@ -88,7 +88,7 @@ function BuildAddress($address_data) {
     print $state . "<BR>";
     $zipcode = $state_temp[1];
     print $zipcode . "<BR>";
-    $googlekey = "AIzaSyCb3EA0lfao273s6Jkp8tfTzJfUSkswpOw";
+    $googlekey = "";
     $googleaddress = "https://maps.googleapis.com/maps/api/geocode/xml?address=+" . $address . ",+" . $city . ",+" . $state . ",+" . $zipcode . "&key=" . $googlekey;
 //print $sampleurl . "<BR>";
     print $googleaddress . "<BR>";
