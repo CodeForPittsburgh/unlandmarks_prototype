@@ -7,12 +7,12 @@
  */
 
 function pg_main() {
-    $database = "postgres";
-    $hostname = "howe-hp";
-    $username = "postgres";
-    $password = "win95sux";
+    $database = "";
+    $hostname = "";
+    $username = "";
+    $password = "";
     $connect_timeout = 60;
-    $port = 5432;
+    $port = ;
 
 
     $dbconn = pg_connect('host=' . $hostname . ' port=' . $port . ' dbname=' . $database . ' user=' . $username . ' password=' . $password . ' connect_timeout=' . $connect_timeout);
